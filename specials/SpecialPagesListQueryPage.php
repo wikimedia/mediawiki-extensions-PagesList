@@ -79,19 +79,10 @@ class SpecialPagesListQueryPage extends QueryPage {
 	 * @return string
 	 */
 	function formatResult( $skin, $result ) {
-		global $wgContLang, $wgPagesListShowLastModification;
+		global $wgPagesListShowLastUser, $wgPagesListShowLastModification;
 
-		if ( $wgPagesListShowLastModification ) {
-			$d = $this->getLanguage()->userDate( $result->value, $this->getUser() );
-		} else {
-			$d = null;
-		}
-		$title = Title::makeTitle( $result->namespace, $result->title );
-		$link = Linker::linkKnown(
-				$title, htmlspecialchars( $wgContLang->convert( $title->getPrefixedText() ) )
-		);
-
-		return $this->getLanguage()->specialList( $link, htmlspecialchars( $d ) );
+		return $this->pagesList->getListItem( $result, $wgPagesListShowLastUser,
+				$wgPagesListShowLastModification );
 	}
 
 	public function getPageHeader() {

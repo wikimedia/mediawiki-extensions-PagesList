@@ -395,7 +395,7 @@ class PagesList extends ContextSource {
 	 * @param boolean $showLastModification
 	 * @return string HTML list item
 	 */
-	protected function getListItem( $resultRow, $showLastUser, $showLastModification ) {
+	public function getListItem( $resultRow, $showLastUser, $showLastModification ) {
 		$extras = array();
 		if ( $showLastUser ) {
 			$extras[] = $this->getLastUser( $resultRow );

@@ -36,14 +36,14 @@ class SpecialPagesList extends IncludableSpecialPage {
 	 * @param string $sub Unused
 	 */
 	public function execute( $sub ) {
-		global $wgPagesListShowLastUser, $wgPagesListShowLastModification, $wgPagesListDataTablesOptions;
+		global $wgPagesListShowLastUser, $wgPagesListShowLastModification;
 
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'pageslist' ) );
 		$out->addHTML( $this->pagesListOptions->getPageHeader() );
 		/** @todo modify to check if DataTables submodule exists */
 		$out->addHTML( $this->pagesList->getList( 'datatable', $wgPagesListShowLastUser,
-				$wgPagesListShowLastModification, $wgPagesListDataTablesOptions, $out ) );
+				$wgPagesListShowLastModification, $out ) );
 	}
 
 	/**
