@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ike Hecht"
+		]
+	},
+	"pageslist-desc": "Shows a list of pages",
+	"pageslist": "Pages List",
+	"pageslistquerypage": "Pages List",
+	"pageslist-legend": "Pages list options",
+	"pageslist-categories": "Category:",
+	"pageslist-title": "Title",
+	"pageslist-last-modified": "Last modified",
+	"pageslist-last-user": "Last modified by",
+	"pageslist-basepage": "Subpages of (include namespace):"
+}
