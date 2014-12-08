@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"pageslist-desc": "Muestra una lista de páginas",
+	"pageslist-categories": "Categoría:",
+	"pageslist-title": "Título",
+	"pageslist-last-modified": "Última modificación",
+	"pageslist-last-user": "Última modificación de",
+	"pageslist-basepage": "Subpáginas de (incluir el espacio de nombres):"
+}

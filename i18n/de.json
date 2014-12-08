@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"pageslist-desc": "Ermöglicht das Anzeigen einer Seitenliste",
+	"pageslist": "Seitenliste",
+	"pageslistquerypage": "Seitenlistenabfrageseite",
+	"pageslist-legend": "Seitenlistenoptionen",
+	"pageslist-categories": "Kategorie:",
+	"pageslist-title": "Titel",
+	"pageslist-last-modified": "Zuletzt geändert",
+	"pageslist-last-user": "Zuletzt geändert von",
+	"pageslist-basepage": "Unterseiten von (inklusive Namensraum):"
+}

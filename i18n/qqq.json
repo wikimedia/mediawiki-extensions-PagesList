@@ -9,8 +9,8 @@
 	"pageslistquerypage": "Title of Special:PagesListQueryPage",
 	"pageslist-legend": "Legend for PagesList special page options header",
 	"pageslist-categories": "{{Identical|Categories}}",
-	"pageslist-basepage": "Label for the basepage field",
 	"pageslist-title": "Table header for the Page Title column",
 	"pageslist-last-modified": "Table header for the Last modified column",
-	"pageslist-last-user": "Table header for the Last modified by column"
+	"pageslist-last-user": "Table header for the Last modified by column",
+	"pageslist-basepage": "Label for the basepage field"
 }

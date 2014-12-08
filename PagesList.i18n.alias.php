@@ -5,6 +5,7 @@
  * @file
  * @ingroup Extensions
  */
+// @codingStandardsIgnoreFile
 
 $specialPageAliases = array();
 
@@ -12,4 +13,10 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'PagesList' => array( 'PagesList' ),
 	'PagesListQueryPage' => array( 'PagesListQueryPage' ),
+);
+
+/** German (Deutsch) */
+$specialPageAliases['de'] = array(
+	'PagesList' => array( 'Seitenliste' ),
+	'PagesListQueryPage' => array( 'Seitenlistenabfrageseite' ),
 );
