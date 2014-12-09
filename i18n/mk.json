@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"pageslist-desc": "Прикажува список на страници",
+	"pageslist": "Список на страници",
+	"pageslistquerypage": "Барање на списоци на страници",
+	"pageslist-legend": "Можности за списокот на страници",
+	"pageslist-categories": "Категорија:",
+	"pageslist-title": "Наслов",
+	"pageslist-last-modified": "Последна измена",
+	"pageslist-last-user": "Последен изменувач",
+	"pageslist-basepage": "Потстраници на (вклуч. именски простор):"
+}

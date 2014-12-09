@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"pageslist-desc": "显示页面列表",
+	"pageslist": "页面列表",
+	"pageslistquerypage": "页面列表查询页面",
+	"pageslist-legend": "页面列表选项",
+	"pageslist-categories": "分类：",
+	"pageslist-title": "标题",
+	"pageslist-last-modified": "最后修改",
+	"pageslist-last-user": "最后修改由",
+	"pageslist-basepage": "父分类（包括名字空间）："
+}
