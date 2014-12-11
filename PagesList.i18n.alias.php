@@ -15,6 +15,12 @@ $specialPageAliases['en'] = array(
 	'PagesListQueryPage' => array( 'PagesListQueryPage' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'PagesList' => array( 'قائمة_الصفحات' ),
+	'PagesListQueryPage' => array( 'صفحة_قائمة_استعلام_الصفحات' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'PagesList' => array( 'Seitenliste' ),
