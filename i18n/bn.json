@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman"
+		]
+	},
+	"pageslist-desc": "পাতাসমূহের একটি তালিকা দেখায়",
+	"pageslist": "পাতাসমূহের তালিকা",
+	"pageslistquerypage": "পাতাসমূহের তালিকার অনুসন্ধান পাতা",
+	"pageslist-legend": "পাতাসমূহের তালিকার অপশন",
+	"pageslist-categories": "বিষয়শ্রেণী:",
+	"pageslist-title": "শিরোনাম",
+	"pageslist-last-modified": "সর্বশেষ পরিবর্তন",
+	"pageslist-last-user": "সর্বশেষ পরিবর্তন করেছেন",
+	"pageslist-basepage": "এর উপপাতা (নামস্থানসহ):"
+}

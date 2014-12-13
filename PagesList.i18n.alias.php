@@ -26,3 +26,9 @@ $specialPageAliases['de'] = array(
 	'PagesList' => array( 'Seitenliste' ),
 	'PagesListQueryPage' => array( 'Seitenlistenabfrageseite' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'PagesList' => array( '页面列表' ),
+	'PagesListQueryPage' => array( '页面列表查询页面' ),
+);
