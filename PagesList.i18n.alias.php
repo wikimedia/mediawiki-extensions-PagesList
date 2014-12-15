@@ -27,6 +27,12 @@ $specialPageAliases['de'] = array(
 	'PagesListQueryPage' => array( 'Seitenlistenabfrageseite' ),
 );
 
+/** Macedonian (македонски) */
+$specialPageAliases['mk'] = array(
+	'PagesList' => array( 'СписокНаСтраници' ),
+	'PagesListQueryPage' => array( 'СписокНаСтранициСтраницаЗаБарање' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'PagesList' => array( '页面列表' ),
