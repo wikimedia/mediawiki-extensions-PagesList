@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"pageslist-desc": "Mostra uma lista de páginas",
+	"pageslist": "Lista de páginas",
+	"pageslist-legend": "Opções da lista de páginas",
+	"pageslist-categories": "Categoria:",
+	"pageslist-title": "Título",
+	"pageslist-last-modified": "Última modificação",
+	"pageslist-last-user": "Última modificação por",
+	"pageslist-basepage": "Subpáginas de (incluir o domínio):"
+}
