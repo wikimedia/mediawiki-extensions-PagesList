@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"SuperPete"
+			"SuperPete",
+			"Pxos"
 		]
 	},
-	"pageslist-desc": "Näyttää listan kaikista sivuista",
-	"pageslist": "Sivuluettelo",
+	"pageslist-desc": "Näyttää luettelon sivuista",
+	"pageslist": "Sivujen luettelo",
 	"pageslistquerypage": "Sivuluettelon hakusivu",
-	"pageslist-categories": "Kategoria:",
-	"pageslist-title": "Otsikko",
+	"pageslist-categories": "Luokka:",
+	"pageslist-title": "Sivun nimi",
 	"pageslist-last-modified": "Viimeksi muokattu",
-	"pageslist-last-user": "Viimeisin muokkaaja"
+	"pageslist-last-user": "Viimeksi muokannut käyttäjä"
 }
