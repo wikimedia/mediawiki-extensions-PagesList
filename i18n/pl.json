@@ -7,5 +7,6 @@
 	"pageslist-desc": "Pokaż listę stron",
 	"pageslist-categories": "Kategoria:",
 	"pageslist-title": "Tytuł",
-	"pageslist-last-modified": "Ostatnia zmiana"
+	"pageslist-last-modified": "Ostatnia zmiana",
+	"pageslist-last-user": "Ostatnio zmieniono przez"
 }
