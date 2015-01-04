@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"pageslist-desc": "Показывает список страниц",
+	"pageslist": "Список страниц",
+	"pageslistquerypage": "Страница запроса списка страниц",
+	"pageslist-legend": "Настройка списка страниц",
+	"pageslist-categories": "Категория:",
+	"pageslist-title": "Заголовок",
+	"pageslist-last-modified": "Последнее изменение",
+	"pageslist-last-user": "Изменена",
+	"pageslist-basepage": "Подстраницы (включая пространство имён):"
+}
