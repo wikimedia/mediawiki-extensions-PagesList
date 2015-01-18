@@ -33,6 +33,11 @@ $specialPageAliases['mk'] = array(
 	'PagesListQueryPage' => array( 'СписокНаСтранициСтраницаЗаБарање' ),
 );
 
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = array(
+	'PagesList' => array( 'فہرست_صفحات' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'PagesList' => array( '页面列表' ),
