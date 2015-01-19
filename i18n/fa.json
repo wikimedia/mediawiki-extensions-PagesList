@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Reza1615"
+		]
+	},
+	"pageslist-desc": "نمایش فهرست صفحات",
+	"pageslist": "فهرست صفحات",
+	"pageslistquerypage": "صفحات فهرست کوئری صفحه",
+	"pageslist-legend": "صفحات فهرست جزئیات",
+	"pageslist-categories": "رده:",
+	"pageslist-title": "عنوان",
+	"pageslist-last-modified": "آخرین ویرایش",
+	"pageslist-last-user": "آخرین ویرایش توسط",
+	"pageslist-basepage": "زیر صفحهٔ (شامل فضای نام):"
+}
