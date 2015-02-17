@@ -60,7 +60,6 @@ class PagesList extends ContextSource {
 	/**
 	 * The index to actually be used for ordering. This is a single column,
 	 * for one ordering, even if multiple orderings are supported.
-	 * @todo fixme
 	 * @var string
 	 */
 	protected $indexField = 'rev_timestamp';
@@ -131,7 +130,7 @@ class PagesList extends ContextSource {
 		$options = isset( $info['options'] ) ? $info['options'] : array();
 		$join_conds = isset( $info['join_conds'] ) ? $info['join_conds'] : array();
 
-		#$options['ORDER BY'] = $this->indexField . ' DESC';
+		$options['ORDER BY'] = $this->indexField . ' DESC';
 
 		return array( $tables, $fields, $conds, $fname, $options, $join_conds );
 	}

@@ -6,7 +6,7 @@
  *
  * @file
  * @ingroup Extensions
- * @author Ike Hecht, 2014
+ * @author Ike Hecht, 2015
  * @license GNU General Public Licence 2.0 or later
  */
 $wgExtensionCredits['other'][] = array(
@@ -15,7 +15,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array(
 		'Ike Hecht',
 	),
-	'version' => '0.1.0',
+	'version' => '0.1.1',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:PagesList',
 	'descriptionmsg' => 'pageslist-desc',
 );
@@ -68,7 +68,8 @@ $wgPagesListShowLastModification = false;
  *
  * Example:
  * $wgPagesListDataTablesOptions = array(
- * 	'iDisplayLength' => 25
+ * 	'iDisplayLength' => 25,
+ * 	'aaSorting' => array() // Don't sort by first column - results in sort by "last modified", descending
  * );
  */
 $wgPagesListDataTablesOptions = array();
