@@ -15,7 +15,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array(
 		'Ike Hecht',
 	),
-	'version' => '0.1.1',
+	'version' => '0.2.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:PagesList',
 	'descriptionmsg' => 'pageslist-desc',
 );
@@ -59,6 +59,12 @@ $wgPagesListShowLastUser = false;
 
 /**
  * Show a column on Special:PagesList that shows when the page was last modified
+ *
+ * Possible values:
+ *	false - Don't display this column
+ *	PagesList::LAST_MODIFICATION_HUMAN - Display this column in human-readable format
+ *		(i.e. "3 minutes ago" or "Friday at 07:20")
+ *	true|PagesList::LAST_MODIFICATION_DATE - Display this column, showing the date
  */
 $wgPagesListShowLastModification = false;
 
@@ -69,7 +75,8 @@ $wgPagesListShowLastModification = false;
  * Example:
  * $wgPagesListDataTablesOptions = array(
  * 	'iDisplayLength' => 25,
- * 	'aaSorting' => array() // Don't sort by first column - results in sort by "last modified", descending
+ *	// Don't sort by first column - results in sort by "last modified", descending
+ * 	'aaSorting' => array()
  * );
  */
 $wgPagesListDataTablesOptions = array();

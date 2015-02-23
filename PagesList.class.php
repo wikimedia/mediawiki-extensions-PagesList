@@ -7,6 +7,16 @@
  */
 class PagesList extends ContextSource {
 	/**
+	 * Display the last modification column in human-readable format
+	 */
+	const LAST_MODIFICATION_DATE = 1;
+
+	/**
+	 * Display the last modification column, showing the date
+	 */
+	const LAST_MODIFICATION_HUMAN = 2;
+
+	/**
 	 * Namespace to target
 	 *
 	 * @var int Namespace constant
@@ -258,7 +268,7 @@ class PagesList extends ContextSource {
 	 * @param Skin $skin Unused
 	 * @param object $result Result row
 	 * @param boolean $showLastUser
-	 * @param boolean $showLastModification
+	 * @param int|boolean $showLastModification
 	 * @return string
 	 */
 	protected function getResultTableRow( $skin, $result, $showLastUser = false,
@@ -269,7 +279,8 @@ class PagesList extends ContextSource {
 			$output .= Html::rawElement( 'td', array(), $this->getLastUser( $result ) );
 		}
 		if ( $showLastModification ) {
-			$output .= Html::element( 'td', array(), $this->getLastModification( $result ) );
+			$output .= Html::element( 'td', array(),
+					$this->getLastModification( $result, $showLastModification ) );
 		}
 		$output .= Html::closeElement( 'tr' );
 		return $output;
@@ -278,7 +289,7 @@ class PagesList extends ContextSource {
 	/**
 	 *
 	 * @param boolean $showLastUser
-	 * @param boolean $showLastModification
+	 * @param int|boolean $showLastModification
 	 * @return string HTML table
 	 */
 	protected function getResultTable( $showLastUser = false, $showLastModification = false ) {
@@ -344,17 +355,48 @@ class PagesList extends ContextSource {
 	 * Get the date of the last modification
 	 *
 	 * @param object $result
+	 * @param int|boolean $showLastModification
 	 * @return string HTML
 	 */
-	protected function getLastModification( $result ) {
+	protected function getLastModification( $result,
+		$showLastModification = self::LAST_MODIFICATION_DATE ) {
+		// Uses == to match where set to "true"
+		if ( $showLastModification == self::LAST_MODIFICATION_DATE ) {
+			$output = $this->getLastModificationDate( $result );
+		} elseif ( $showLastModification === self::LAST_MODIFICATION_HUMAN ) {
+			$output = $this->getLastModificationHuman( $result );
+		} else {
+			$output = '';/** @todo throw error? or default to LAST_MODIFICATION_DATE? */
+		}
+		return $output;
+	}
+
+	/**
+	 * Get the date of the last modification as a plain-old date
+	 *
+	 * @param object $result
+	 * @return string HTML
+	 */
+	private function getLastModificationDate( $result ) {
 		return $this->getLanguage()->userDate( $result->value, $this->getUser() );
+	}
+
+	/**
+	 * Get the date of the last modification in human-readable format
+	 *
+	 * @param object $result
+	 * @return string HTML
+	 */
+	private function getLastModificationHuman( $result ) {
+		$timestamp = new MWTimestamp( $result->value );
+		return $timestamp->getHumanTimestamp();
 	}
 
 	/**
 	 *
 	 * @param string $format
 	 * @param boolean $showLastUser
-	 * @param boolean $showLastModification
+	 * @param int|boolean $showLastModification
 	 * @return string HTML list
 	 */
 	protected function getResultList( $format, $showLastUser = false, $showLastModification = false ) {
@@ -371,7 +413,7 @@ class PagesList extends ContextSource {
 	/**
 	 *
 	 * @param boolean $showLastUser
-	 * @param boolean $showLastModification
+	 * @param int|boolean $showLastModification
 	 * @return string HTML comma separated list
 	 */
 	protected function getResultPlain( $showLastUser = false, $showLastModification = false ) {
@@ -391,7 +433,7 @@ class PagesList extends ContextSource {
 	 *
 	 * @param object $resultRow
 	 * @param boolean $showLastUser
-	 * @param boolean $showLastModification
+	 * @param int|boolean $showLastModification
 	 * @return string HTML list item
 	 */
 	public function getListItem( $resultRow, $showLastUser, $showLastModification ) {
@@ -400,7 +442,7 @@ class PagesList extends ContextSource {
 			$extras[] = $this->getLastUser( $resultRow );
 		}
 		if ( $showLastModification ) {
-			$extras[] = $this->getLastModification( $resultRow );
+			$extras[] = $this->getLastModification( $resultRow, $showLastModification );
 		}
 		$commaList = $this->getLanguage()->commaList( $extras );
 		return $this->getLanguage()->specialList( $this->getLinkedTitle( $resultRow ), $commaList );
