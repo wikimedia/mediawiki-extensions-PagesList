@@ -27,6 +27,11 @@ $specialPageAliases['de'] = array(
 	'PagesListQueryPage' => array( 'Seitenlistenabfrageseite' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'PagesList' => array( 'نومگه_بلگه_یا' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'PagesList' => array( 'СписокНаСтраници' ),
