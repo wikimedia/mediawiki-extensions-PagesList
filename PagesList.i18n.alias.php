@@ -27,6 +27,11 @@ $specialPageAliases['de'] = array(
 	'PagesListQueryPage' => array( 'Seitenlistenabfrageseite' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'PagesList' => array( 'Lëscht_vu_Säiten' ),
+);
+
 /** لوری (لوری) */
 $specialPageAliases['lrc'] = array(
 	'PagesList' => array( 'نومگه_بلگه_یا' ),
