@@ -1,12 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"pageslist-desc": "Amosa unha lista de páxinas",
 	"pageslist": "Lista de páxinas",
+	"pageslistquerypage": "Páxina de consulta da lista de páxinas",
+	"pageslist-legend": "Opcións da lista de páxinas",
 	"pageslist-categories": "Categoría:",
 	"pageslist-title": "Título",
-	"pageslist-last-modified": "Última modificación"
+	"pageslist-last-modified": "Última modificación",
+	"pageslist-last-user": "Última modificación de",
+	"pageslist-basepage": "Subpáxinas de (incluír o espazo de nomes):"
 }
