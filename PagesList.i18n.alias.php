@@ -32,7 +32,7 @@ $specialPageAliases['lb'] = array(
 	'PagesList' => array( 'Lëscht_vu_Säiten' ),
 );
 
-/** لوری مینجایی (لوری مینجایی) */
+/** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'PagesList' => array( 'نومگه_بلگه_یا' ),
 );
