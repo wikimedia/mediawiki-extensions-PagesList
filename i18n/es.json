@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Ryo567"
 		]
 	},
 	"pageslist-desc": "Muestra una lista de páginas",
+	"pageslist": "Lista de páginas",
+	"pageslistquerypage": "Página de consulta de la lista de páginas",
+	"pageslist-legend": "Opciones de la lista de páginas.",
 	"pageslist-categories": "Categoría:",
 	"pageslist-title": "Título",
 	"pageslist-last-modified": "Última modificación",
