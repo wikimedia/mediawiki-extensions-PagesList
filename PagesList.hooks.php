@@ -16,10 +16,14 @@ class PagesListHooks {
 	 * @return boolean
 	 */
 	public static function onResourceLoaderGetConfigVars( Array &$vars ) {
-		global $wgPagesListDataTablesOptions;
+		global $wgPagesListDataTablesOptions, $wgPagesListUseAjax,
+		$wgPagesListShowLastUser, $wgPagesListShowLastModification;
 
 		$vars['wgPagesList'] = array(
-			'dataTablesOptions' => FormatJson::encode( $wgPagesListDataTablesOptions )
+			'dataTablesOptions' => FormatJson::encode( $wgPagesListDataTablesOptions ),
+			'useAjax' => $wgPagesListUseAjax,
+			'showLastUser' => $wgPagesListShowLastUser,
+			'showLastModification' => $wgPagesListShowLastModification
 		);
 
 		return true;
@@ -69,7 +73,7 @@ class PagesListHooks {
 	 */
 	public static function pageslistParserFunction(
 	Parser $parser, PPFrame $frame, array $args ) {
-		global $wgPagesListShowLastUser, $wgPagesListShowLastModification;
+		global $wgPagesListShowLastUser, $wgPagesListShowLastModification, $wgPagesListUseAjax;
 
 		$params = self::extractOptions( $args, $frame );
 		$options = array( 'namespace', 'invert', 'associated', 'category', 'basepage', 'format' );
@@ -80,14 +84,7 @@ class PagesListHooks {
 		$categoryTitle = Title::makeTitleSafe( NS_CATEGORY, $params['category'] );
 		$basePageTitle = Title::newFromText( $params['basepage'] );
 
-		if ( strtolower( $params['namespace'] ) === 'main' ) {
-			$params['namespace'] = '';
-		}
-		if ( is_null( $params['namespace'] ) ) {
-			$namespaceId = null;
-		} else {
-			$namespaceId = MWNamespace::getCanonicalIndex( strtolower( $params['namespace'] ) );
-		}
+		$namespaceId = self::getNamespaceIndex( $params['namespace'] );
 
 		$bools = array( 'invert', 'associated' );
 		foreach ( $bools as $bool ) {
@@ -103,6 +100,10 @@ class PagesListHooks {
 
 		if ( is_null( $params['format'] ) ) {
 			$params['format'] = 'datatable';
+		}
+
+		if ( !$wgPagesListUseAjax || $params['format'] !== 'datatable' ) {
+			$pagesList->doQuery();
 		}
 
 		$output = $pagesList->getList( $params['format'], $wgPagesListShowLastUser,
@@ -131,5 +132,24 @@ class PagesListHooks {
 		}
 
 		return $results;
+	}
+
+	/**
+	 * Get the canonical index for this namespace name.
+	 *
+	 * @todo Place in a utils class
+	 * @param string $namespaceName The canonical name of this index or "main" for the main namespace
+	 * @return int
+	 */
+	public static function getNamespaceIndex( $namespaceName ) {
+		if ( strtolower( $namespaceName ) === 'main' ) {
+			$namespaceName = '';
+		}
+
+		if ( is_null( $namespaceName ) ) {
+			return null;
+		} else {
+			return MWNamespace::getCanonicalIndex( strtolower( $namespaceName ) );
+		}
 	}
 }

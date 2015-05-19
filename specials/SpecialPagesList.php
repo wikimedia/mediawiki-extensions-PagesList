@@ -22,11 +22,16 @@ class SpecialPagesList extends IncludableSpecialPage {
 	public function __construct() {
 		parent::__construct( 'PagesList' );
 
+		global $wgPagesListUseAjax;
+
 		$opts = $this->fetchOptionsFromRequest( PagesListOptions::getDefaultOptions() );
 		$categoryTitle = Title::makeTitleSafe( NS_CATEGORY, $opts['categories'] );
 		$basePageTitle = Title::newFromText( $opts['basepage'] );
 		$this->pagesList = new PagesList( wfGetDB( DB_SLAVE ), $opts['namespace'], $opts['invert'],
 			$opts['associated'], $categoryTitle, $basePageTitle );
+		if ( !$wgPagesListUseAjax ) {
+			$this->pagesList->doQuery();
+		}
 		$this->pagesListOptions = new PagesListOptions(
 			$this->getPageTitle(), $opts, $this->getContext() );
 	}

@@ -15,7 +15,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array(
 		'Ike Hecht',
 	),
-	'version' => '0.2.0',
+	'version' => '0.3.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:PagesList',
 	'descriptionmsg' => 'pageslist-desc',
 );
@@ -26,6 +26,10 @@ $wgAutoloadClasses['PagesListOptions'] = __DIR__ . '/specials/PagesListOptions.p
 $wgAutoloadClasses['SpecialPagesList'] = __DIR__ . '/specials/SpecialPagesList.php';
 $wgAutoloadClasses['SpecialPagesListQueryPage'] = __DIR__ .
 	'/specials/SpecialPagesListQueryPage.php';
+$wgAutoloadClasses['PagesListAPI'] = __DIR__ . '/PagesListAPI.php';
+
+$wgAPIModules['pageslist'] = 'PagesListAPI';
+
 $wgMessagesDirs['PagesList'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['PagesListAlias'] = __DIR__ . '/PagesList.i18n.alias.php';
 $wgExtensionMessagesFiles['PagesListMagic'] = __DIR__ . '/PagesList.magic.php';
@@ -75,8 +79,15 @@ $wgPagesListShowLastModification = false;
  * Example:
  * $wgPagesListDataTablesOptions = array(
  * 	'iDisplayLength' => 25,
- *	// Don't sort by first column - results in sort by "last modified", descending
+ *	// Don't sort by first column - results in a sort by "last modified", descending
  * 	'aaSorting' => array()
  * );
  */
 $wgPagesListDataTablesOptions = array();
+
+/**
+ * Only partially functional - some of the DataTables bells and whistles are disabled and does not
+ * limit results by namespace and such. See the js file and the API class.
+ * Let's keep this undocumented, OK?
+ */
+$wgPagesListUseAjax = false;

@@ -68,13 +68,6 @@ class PagesList extends ContextSource {
 	public static $loadDataTables = false;
 
 	/**
-	 * The index to actually be used for ordering. This is a single column,
-	 * for one ordering, even if multiple orderings are supported.
-	 * @var string
-	 */
-	protected $indexField = 'rev_timestamp';
-
-	/**
 	 * Result object for the query. Warning: seek before use.
 	 *
 	 * @var ResultWrapper
@@ -84,8 +77,8 @@ class PagesList extends ContextSource {
 	/**
 	 *
 	 * @param DatabaseBase $db
-	 * @param string $namespace
-	 * @param boolean $nsInvert
+	 * @param int $namespace A nampesace index
+	 * @param boolean $nsInvert Set to true to show pages in all namespaces EXCEPT $namespace
 	 * @param boolean $associated
 	 * @param Title $category
 	 * @param Title $basePage
@@ -104,20 +97,25 @@ class PagesList extends ContextSource {
 		$this->associated = $associated;
 		$this->category = $category;
 		$this->basePage = $basePage;
-
-		$this->doQuery();
 	}
 
 	/**
 	 * Perform the db query
 	 * The query code is based on ContribsPager
+	 *
+	 * @param string $offset Index offset, inclusive
+	 * @param int $limit Exact query limit
+	 * @param string $indexField
+	 * @param bool $descending Query direction, false for ascending, true for descending
 	 */
-	protected function doQuery() {
+	public function doQuery( $offset = false, $limit = false, $indexField = 'rev_timestamp',
+		$descending = true ) {
 		# Use the child class name for profiling
 		$fname = __METHOD__ . ' (' . get_class( $this ) . ')';
 		wfProfileIn( $fname );
 
-		list( $tables, $fields, $conds, $fname, $options, $join_conds ) = $this->buildQueryInfo();
+		list( $tables, $fields, $conds, $fname, $options, $join_conds ) = $this->buildQueryInfo( $offset,
+			$limit, $indexField, $descending );
 		$this->result = $this->db->select(
 			$tables, $fields, $conds, $fname, $options, $join_conds
 		);
@@ -129,9 +127,13 @@ class PagesList extends ContextSource {
 	/**
 	 * Generate an array to be turned into the full and final query.
 	 *
+	 * @param string $offset Index offset, inclusive
+	 * @param int $limit Exact query limit
+	 * @param string $indexField
+	 * @param bool $descending Query direction, false for ascending, true for descending
 	 * @return array
 	 */
-	protected function buildQueryInfo() {
+	protected function buildQueryInfo( $offset, $limit, $indexField, $descending ) {
 		$fname = __METHOD__ . ' (' . $this->getSqlComment() . ')';
 		$info = $this->getQueryInfo();
 		$tables = $info['tables'];
@@ -140,8 +142,13 @@ class PagesList extends ContextSource {
 		$options = isset( $info['options'] ) ? $info['options'] : array();
 		$join_conds = isset( $info['join_conds'] ) ? $info['join_conds'] : array();
 
-		$options['ORDER BY'] = $this->indexField . ' DESC';
-
+		$options['ORDER BY'] = $indexField . ( $descending ? ' DESC' : ' ASC' );
+		if ( $offset ) {
+			$options['OFFSET'] = intval( $offset );
+		}
+		if ( $limit ) {
+			$options['LIMIT'] = intval( $limit );
+		}
 		return array( $tables, $fields, $conds, $fname, $options, $join_conds );
 	}
 
@@ -236,12 +243,15 @@ class PagesList extends ContextSource {
 		if ( !isset( $out ) ) {
 			$out = $this->getOutput();
 		}
+		$useAjax = false;
 		switch ( $format ) {
 			case 'datatable':
 				/** @todo modify to check if DataTables submodule exists */
 				self::$loadDataTables = true;
+				global $wgPagesListUseAjax;
+				$useAjax = $wgPagesListUseAjax;
 			case 'table':
-				return $this->getResultTable( $showLastUser, $showLastModification );
+				return $this->getResultTable( $useAjax, $showLastUser, $showLastModification );
 			case 'ol':
 			case 'ul':
 				return $this->getResultList( $format, $showLastUser, $showLastModification );
@@ -288,11 +298,13 @@ class PagesList extends ContextSource {
 
 	/**
 	 *
+	 * @param boolean $useAjax
 	 * @param boolean $showLastUser
 	 * @param int|boolean $showLastModification
 	 * @return string HTML table
 	 */
-	protected function getResultTable( $showLastUser = false, $showLastModification = false ) {
+	protected function getResultTable( $useAjax = true, $showLastUser = false,
+		$showLastModification = false ) {
 		$output = Html::openElement( 'table',
 				array( 'class' => 'pages-list stripe row-border hover' ) );
 		$output .= Html::openElement( 'thead' );
@@ -307,15 +319,49 @@ class PagesList extends ContextSource {
 		$output .= Html::closeElement( 'tr' );
 		$output .= Html::closeElement( 'thead' );
 		$output .= Html::openElement( 'tbody' );
-		while ( $resultRow = $this->result->fetchObject() ) {
-			$output .= $this->getResultTableRow( $this->getSkin(), $resultRow, $showLastUser,
-				$showLastModification );
+		# If the data won't be loaded later via AJAX, load it here.
+		if ( !$useAjax ) {
+			while ( $resultRow = $this->result->fetchObject() ) {
+				$output .= $this->getResultTableRow( $this->getSkin(), $resultRow, $showLastUser,
+					$showLastModification );
+			}
 		}
 		$output .= Html::closeElement( 'tbody' );
 		$output .= Html::closeElement( 'table' );
 		return $output;
 	}
 
+	/**
+	 * Get the total number of rows in this result
+	 *
+	 * @return int
+	 */
+	public function getTotalRows() {
+		return $this->result->numRows();
+	}
+
+	/**
+	 * Get an array representing this result, used by the API
+	 *
+	 * @param boolean $showLastUser
+	 * @param boolean $showLastModification
+	 * @return array
+	 */
+	public function getResultArray( $showLastUser = false, $showLastModification = false ) {
+		$array = array();
+		while ( $result = $this->result->fetchObject() ) {
+			$arrayElement = array( 'title' => $this->getLinkedTitle( $result ) );
+			if ( $showLastUser ) {
+				$arrayElement['rev_user_text'] = $this->getLastUser( $result );
+			}
+			if ( $showLastModification ) {
+				$arrayElement['rev_timestamp'] = $this->getLastModification( $result, $showLastModification );
+			}
+			$array[] = $arrayElement;
+		}
+
+		return $array;
+	}
 
 	/**
 	 * Add all necessary DataTables scripts and styles to output
