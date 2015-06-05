@@ -34,7 +34,7 @@ $specialPageAliases['lb'] = array(
 
 /** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
-	'PagesList' => array( 'نومگه_بلگه_یا' ),
+	'PagesList' => array( 'نومگە_بألگە_یا' ),
 );
 
 /** Macedonian (македонски) */
