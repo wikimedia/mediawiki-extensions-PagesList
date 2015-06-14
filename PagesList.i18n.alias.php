@@ -32,7 +32,7 @@ $specialPageAliases['lb'] = array(
 	'PagesList' => array( 'Lëscht_vu_Säiten' ),
 );
 
-/** Northern Luri (لوری مینجایی) */
+/** Northern Luri (لۊری شومالی) */
 $specialPageAliases['lrc'] = array(
 	'PagesList' => array( 'نومگە_بألگە_یا' ),
 );
