@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"pageslist-desc": "Показує список сторінок",
+	"pageslist": "Список сторінок",
+	"pageslistquerypage": "Сторінка запиту списку сторінок",
+	"pageslist-legend": "Налаштування списку сторінок",
+	"pageslist-categories": "Категорія:",
+	"pageslist-title": "Назва",
+	"pageslist-last-modified": "Остання зміна",
+	"pageslist-last-user": "Остання зміна:",
+	"pageslist-basepage": "Підсторінки (включно з простором назв):"
+}
