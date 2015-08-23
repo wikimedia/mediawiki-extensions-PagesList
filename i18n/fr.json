@@ -1,8 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Crochet.david"
+			"Crochet.david",
+			"Wladek92"
 		]
 	},
-	"pageslist-title": "Titre"
+	"pageslist-desc": "Affiche une liste de pages",
+	"pageslist": "Liste des pages",
+	"pageslistquerypage": "Liste des pages de la requête de pages",
+	"pageslist-legend": "Options de la liste des pages",
+	"pageslist-categories": "Catégorie :",
+	"pageslist-title": "Titre",
+	"pageslist-last-modified": "Dernière modification",
+	"pageslist-last-user": "Dernière modification par",
+	"pageslist-basepage": "Sous-pages de (inclure l'espace de noms) :"
 }
