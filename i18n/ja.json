@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otokoume"
+		]
+	},
+	"pageslist-desc": "ページの一覧を表示します",
+	"pageslist": "ページ一覧",
+	"pageslistquerypage": "クエリページ一覧",
+	"pageslist-legend": "ページリストの設定",
+	"pageslist-categories": "カテゴリ:",
+	"pageslist-title": "タイトル",
+	"pageslist-last-modified": "最終変更日時",
+	"pageslist-last-user": "最終変更:",
+	"pageslist-basepage": "下位ページ (名前空間を含む):"
+}
