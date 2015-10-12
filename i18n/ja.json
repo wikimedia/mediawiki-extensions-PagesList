@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otokoume"
+			"Otokoume",
+			"2nd-player"
 		]
 	},
 	"pageslist-desc": "ページの一覧を表示します",
@@ -9,7 +10,7 @@
 	"pageslistquerypage": "クエリページ一覧",
 	"pageslist-legend": "ページリストの設定",
 	"pageslist-categories": "カテゴリ:",
-	"pageslist-title": "タイトル",
+	"pageslist-title": "ページ名",
 	"pageslist-last-modified": "最終変更日時",
 	"pageslist-last-user": "最終変更:",
 	"pageslist-basepage": "下位ページ (名前空間を含む):"
