@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"pageslist-desc": "Amuesa una llista de páxines",
+	"pageslist": "Llista de páxines",
+	"pageslistquerypage": "Páxina de consulta de la llista de páxines",
+	"pageslist-legend": "Opciones de la llista de páxines.",
+	"pageslist-categories": "Categoría:",
+	"pageslist-title": "Títulu",
+	"pageslist-last-modified": "Últimu cambiu",
+	"pageslist-last-user": "Últimu cambéu de",
+	"pageslist-basepage": "Subpáxines de (incluir l'espaciu de nomes):"
+}
