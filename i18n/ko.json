@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Revi"
+		]
+	},
+	"pageslist-desc": "문서 목록을 보여줍니다",
+	"pageslist": "문서 목록",
+	"pageslistquerypage": "문서 목록 쿼리",
+	"pageslist-legend": "문서 목록 옵션",
+	"pageslist-categories": "분류:",
+	"pageslist-title": "제목",
+	"pageslist-last-modified": "마지막 수정",
+	"pageslist-last-user": "최근 편집자",
+	"pageslist-basepage": "하위문서 (이름공간 포함):"
+}
