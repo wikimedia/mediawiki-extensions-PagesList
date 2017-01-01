@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"pageslist-desc": "Viser en liste over sider",
+	"pageslist": "Sideliste",
+	"pageslistquerypage": "Spørringsside for sideliste",
+	"pageslist-legend": "Sidelistevalg",
+	"pageslist-categories": "Kategori:",
+	"pageslist-title": "Tittel",
+	"pageslist-last-modified": "Sist endret",
+	"pageslist-last-user": "Sist endret av",
+	"pageslist-basepage": "Undersider av (inkluder navnerom):"
+}
