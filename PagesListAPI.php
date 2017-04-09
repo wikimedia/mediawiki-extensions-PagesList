@@ -62,14 +62,6 @@ class PagesListAPI extends ApiBase {
 
 	/**
 	 *
-	 * @return string
-	 */
-	public function getDescription() {
-		return 'Shows a list of pages contained in the wiki.';
-	}
-
-	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedParams() {
@@ -90,25 +82,14 @@ class PagesListAPI extends ApiBase {
 	}
 
 	/**
+	 * @see ApiBase::getExamplesMessages()
 	 *
 	 * @return array
 	 */
-	public function getParamDescription() {
+	public function getExamplesMessages() {
 		return array(
-			'draw' => 'Value to ensure response matches this request',
-			'start' => 'Result offset, zero-based',
-			'length' => 'Number of results to return'
-		);
-	}
-
-	/**
-	 *
-	 * @return array
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=' . $this->getModuleName() . '&draw=2&format=json&start=10&length=10'
-			=> 'Get results 10-19 from the PagesList'
+			'action=' . $this->getModuleName() . '&draw=2&format=json&start=10&length=10'
+			=> 'apihelp-pageslist-example'
 		);
 	}
 }

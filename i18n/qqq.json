@@ -14,5 +14,10 @@
 	"pageslist-title": "Table header for the Page Title column\n{{Identical|Title}}",
 	"pageslist-last-modified": "Table header for the Last modified column",
 	"pageslist-last-user": "Table header for the Last modified by column",
-	"pageslist-basepage": "Label for the basepage field"
+	"pageslist-basepage": "Label for the basepage field",
+	"apihelp-pageslist-description": "{{doc-apihelp-description|pageslist}}",
+	"apihelp-pageslist-param-draw": "{{doc-apihelp-param|pageslist|draw}}",
+	"apihelp-pageslist-param-start": "{{doc-apihelp-param|pageslist|start}}",
+	"apihelp-pageslist-param-length": "{{doc-apihelp-param|pageslist|length}}",
+	"apihelp-pageslist-example": "{{doc-apihelp-example|pageslist}}"
 }
