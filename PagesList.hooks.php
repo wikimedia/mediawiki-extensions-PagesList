@@ -51,7 +51,7 @@ class PagesListHooks {
 	 * @return boolean
 	 */
 	public static function setupParserFunction( Parser &$parser ) {
-		$parser->setFunctionHook( 'pageslist', __CLASS__ . '::pageslistParserFunction', SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'pageslist', __CLASS__ . '::pageslistParserFunction', Parser::SFH_OBJECT_ARGS );
 
 		return true;
 	}
