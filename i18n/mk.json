@@ -12,5 +12,10 @@
 	"pageslist-title": "Наслов",
 	"pageslist-last-modified": "Последна измена",
 	"pageslist-last-user": "Последен изменувач",
-	"pageslist-basepage": "Потстраници на (вклуч. именски простор):"
+	"pageslist-basepage": "Потстраници на (вклуч. именски простор):",
+	"apihelp-pageslist-description": "Дава целосен список на страници што ги содржи викито.",
+	"apihelp-pageslist-param-draw": "Вредност која осигурува одѕивот да одговара на барањево",
+	"apihelp-pageslist-param-start": "Отстап на исходот, на нуларна основа",
+	"apihelp-pageslist-param-length": "Број на ставки во исходот од барањето",
+	"apihelp-pageslist-example": "Дај ставки 10-19 од Список на страници"
 }

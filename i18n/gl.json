@@ -13,5 +13,7 @@
 	"pageslist-title": "Título",
 	"pageslist-last-modified": "Última modificación",
 	"pageslist-last-user": "Última modificación de",
-	"pageslist-basepage": "Subpáxinas de (incluír o espazo de nomes):"
+	"pageslist-basepage": "Subpáxinas de (incluír o espazo de nomes):",
+	"apihelp-pageslist-param-length": "Número de resultados a devolver",
+	"apihelp-pageslist-example": "Obter os resultados 10-19 de PagesList"
 }

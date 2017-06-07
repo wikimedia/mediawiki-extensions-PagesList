@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"apihelp-pageslist-description": "Mostra un elenco di pagine contenute nel wiki.",
+	"apihelp-pageslist-param-length": "Numero di risultati da restituire"
+}

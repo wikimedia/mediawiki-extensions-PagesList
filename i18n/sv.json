@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"apihelp-pageslist-description": "Visar en lista över sidor som finns på wikin.",
+	"apihelp-pageslist-param-length": "Antal resultat att returnera"
+}
