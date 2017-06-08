@@ -13,5 +13,10 @@
 	"pageslist-title": "Título",
 	"pageslist-last-modified": "Última modificação",
 	"pageslist-last-user": "Última modificação por",
-	"pageslist-basepage": "Subpáginas de (incluir o domínio):"
+	"pageslist-basepage": "Subpáginas de (incluir o domínio):",
+	"apihelp-pageslist-description": "Mostra uma lista de páginas contidas na wiki.",
+	"apihelp-pageslist-param-draw": "Valor que assegura que a resposta corresponda a este pedido",
+	"apihelp-pageslist-param-start": "Posição do resultado, a partir de zero",
+	"apihelp-pageslist-param-length": "Número de resultados a serem devolvidos",
+	"apihelp-pageslist-example": "Obter os resultados 10 a 19 da lista de páginas"
 }
