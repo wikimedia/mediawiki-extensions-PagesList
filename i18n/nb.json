@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Pmt"
 		]
 	},
 	"pageslist-desc": "Viser en liste over sider",
@@ -12,5 +13,6 @@
 	"pageslist-title": "Tittel",
 	"pageslist-last-modified": "Sist endret",
 	"pageslist-last-user": "Sist endret av",
-	"pageslist-basepage": "Undersider av (inkluder navnerom):"
+	"pageslist-basepage": "Undersider av (inkluder navnerom):",
+	"apihelp-pageslist-description": "Viser en liste over sider på denne Wikien"
 }
