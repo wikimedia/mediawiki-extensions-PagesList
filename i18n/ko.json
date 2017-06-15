@@ -15,6 +15,7 @@
 	"pageslist-last-user": "최근 편집자",
 	"pageslist-basepage": "하위문서 (이름공간 포함):",
 	"apihelp-pageslist-description": "위키에 포함된 문서의 목록을 표시합니다.",
+	"apihelp-pageslist-summary": "위키에 포함된 문서의 목록을 표시합니다.",
 	"apihelp-pageslist-param-length": "반환할 결과 수",
 	"apihelp-pageslist-example": "문서 목록에서 10~19개의 결과를 가져옵니다"
 }

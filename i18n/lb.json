@@ -10,5 +10,6 @@
 	"pageslist-title": "Titel",
 	"pageslist-last-modified": "Lescht Ännerung",
 	"pageslist-last-user": "Lescht Ännerung vum",
-	"pageslist-basepage": "Ënnersäite vun (Inklusiv Nummraum):"
+	"pageslist-basepage": "Ënnersäite vun (Inklusiv Nummraum):",
+	"apihelp-pageslist-summary": "Weist eng Lëscht vu Säiten déi an der Wiki dra sinn."
 }
