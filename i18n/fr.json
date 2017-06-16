@@ -16,6 +16,7 @@
 	"pageslist-last-user": "Dernière modification par",
 	"pageslist-basepage": "Sous-pages de (inclure l'espace de noms) :",
 	"apihelp-pageslist-description": "Affiche une liste de pages contenues dans le wiki",
+	"apihelp-pageslist-summary": "Affiche une liste de pages contenues dans le wiki.",
 	"apihelp-pageslist-param-draw": "Valeur pour s’assurer que la réponse correspond à cette requête",
 	"apihelp-pageslist-param-start": "Décalage du résultat, à partir de 0",
 	"apihelp-pageslist-param-length": "Nombre de résultats à renvoyer",
