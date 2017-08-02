@@ -14,6 +14,9 @@
 	"pageslist-last-user": "最后修改由",
 	"pageslist-basepage": "父分类（包括名字空间）：",
 	"apihelp-pageslist-description": "显示包含在wiki中的页面列表。",
+	"apihelp-pageslist-summary": "显示包含在wiki中的页面列表。",
+	"apihelp-pageslist-param-draw": "确保响应匹配此请求的值",
 	"apihelp-pageslist-param-start": "结果偏移，从零开始",
-	"apihelp-pageslist-param-length": "返回的结果数"
+	"apihelp-pageslist-param-length": "返回的结果数",
+	"apihelp-pageslist-example": "从页面列表中获取结果10~19"
 }
