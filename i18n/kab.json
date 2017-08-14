@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Belkacem77"
+		]
+	},
+	"pageslist-desc": "Ad d-yesken tabdart n isebtar",
+	"pageslist": "Tabdart n isebtar",
+	"pageslistquerypage": "Tabdart n isebtar n tuttra n isebtar",
+	"pageslist-legend": "Iɣewwaṛen n tebdart n isebtar",
+	"pageslist-categories": "Taggayt :",
+	"pageslist-title": "Azwel",
+	"pageslist-last-modified": "Asnifel aneggaru",
+	"pageslist-last-user": "Asnifel aneggaru sɣur",
+	"pageslist-basepage": "Isebtar isnawanen n (seddu tallunt n yismawen):",
+	"apihelp-pageslist-description": "Ad d-yesken tabdart n isebtar n ugbur deg uwiki.",
+	"apihelp-pageslist-summary": "Ad d-yesken tabdart n isebtar yellan deg uwiki.",
+	"apihelp-pageslist-param-draw": "Azal ara yeḍemnen tiririt icudden ar tuttra-agi",
+	"apihelp-pageslist-param-start": "Asiẓi n ugmuḍ seg 0",
+	"apihelp-pageslist-param-length": "Amḍan n ugmuḍ ara d-yuɣalen",
+	"apihelp-pageslist-example": "Awi igmaḍ 10 ar 19 n PagesList"
+}
