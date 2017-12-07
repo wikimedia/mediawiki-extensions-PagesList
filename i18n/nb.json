@@ -14,5 +14,6 @@
 	"pageslist-last-modified": "Sist endret",
 	"pageslist-last-user": "Sist endret av",
 	"pageslist-basepage": "Undersider av (inkluder navnerom):",
-	"apihelp-pageslist-description": "Viser en liste over sider på denne Wikien"
+	"apihelp-pageslist-description": "Viser en liste over sider på denne Wikien",
+	"apihelp-pageslist-summary": "Viser en liste over sider på wikien."
 }
