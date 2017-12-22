@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  *
  *
@@ -55,7 +57,7 @@ class PagesList extends ContextSource {
 	/**
 	 * A read-only database object
 	 *
-	 * @var DatabaseBase
+	 * @var IDatabase
 	 */
 	private $db;
 
@@ -76,7 +78,7 @@ class PagesList extends ContextSource {
 
 	/**
 	 *
-	 * @param DatabaseBase $db
+	 * @param IDatabase $db
 	 * @param int $namespace A nampesace index
 	 * @param boolean $nsInvert Set to true to show pages in all namespaces EXCEPT $namespace
 	 * @param boolean $associated
@@ -84,7 +86,7 @@ class PagesList extends ContextSource {
 	 * @param Title $basePage
 	 * @param IContextSource $context
 	 */
-	function __construct( DatabaseBase $db, $namespace = null, $nsInvert = false, $associated = false,
+	function __construct( IDatabase $db, $namespace = null, $nsInvert = false, $associated = false,
 		Title $category = null, Title $basePage = null, IContextSource $context = null ) {
 
 		if ( $context ) {
