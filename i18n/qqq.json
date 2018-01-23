@@ -12,7 +12,7 @@
 	"pageslist-legend": "Legend for PagesList special page options header",
 	"pageslist-categories": "{{Identical|Category}}",
 	"pageslist-title": "Table header for the Page Title column\n{{Identical|Title}}",
-	"pageslist-last-modified": "Table header for the Last modified column",
+	"pageslist-last-modified": "Table header for the Last modified column\n{{Identical|Last modified}}",
 	"pageslist-last-user": "Table header for the Last modified by column",
 	"pageslist-basepage": "Label for the basepage field",
 	"apihelp-pageslist-description": "{{doc-apihelp-description|pageslist}}",
