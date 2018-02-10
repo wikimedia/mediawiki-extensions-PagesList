@@ -112,18 +112,12 @@ class PagesList extends ContextSource {
 	 */
 	public function doQuery( $offset = false, $limit = false, $indexField = 'rev_timestamp',
 		$descending = true ) {
-		# Use the child class name for profiling
-		$fname = __METHOD__ . ' (' . get_class( $this ) . ')';
-		wfProfileIn( $fname );
-
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) = $this->buildQueryInfo( $offset,
 			$limit, $indexField, $descending );
 		$this->result = $this->db->select(
 			$tables, $fields, $conds, $fname, $options, $join_conds
 		);
 		$this->result->rewind(); // Paranoia
-
-		wfProfileOut( $fname );
 	}
 
 	/**
