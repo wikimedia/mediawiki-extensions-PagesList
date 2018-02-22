@@ -17,6 +17,7 @@
 	"apihelp-pageslist-description": "顯示包含在 wiki 裡頁面的清單。",
 	"apihelp-pageslist-summary": "顯示包含在 wiki 裡頁面的清單。",
 	"apihelp-pageslist-param-draw": "確定回應符合此請求的值",
+	"apihelp-pageslist-param-start": "從零開始的結果偏移",
 	"apihelp-pageslist-param-length": "回傳的結果數量。",
 	"apihelp-pageslist-example": "從頁面清單裡取得 10-19 結果"
 }
