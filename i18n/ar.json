@@ -1,8 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Meno25"
+			"Meno25",
+			"ديفيد"
 		]
 	},
-	"pageslist-title": "العنوان"
+	"pageslist-desc": "يعرض قائمة صفحات",
+	"pageslist": "قائمة الصفحات",
+	"pageslistquerypage": "صفحة استعلام قائمة الصفحات",
+	"pageslist-legend": "خيارات قائمة الصفحات",
+	"pageslist-categories": "التصنيف:",
+	"pageslist-title": "العنوان",
+	"pageslist-last-modified": "آخر تعديل",
+	"pageslist-last-user": "آخر تعديل بواسطة",
+	"pageslist-basepage": "الصفحات الفرعية لـ (تشمل النطاق):",
+	"apihelp-pageslist-description": "يعرض قائمة بالصفحات الموجودة في الويكي.",
+	"apihelp-pageslist-summary": "يعرض قائمة بالصفحات الموجودة في الويكي.",
+	"apihelp-pageslist-param-draw": "قيمة لضمان استجابة تطابق هذا الطلب",
+	"apihelp-pageslist-param-start": "حيد النتيجة، على أساس الصفر",
+	"apihelp-pageslist-param-length": "عدد النتائج للعودة",
+	"apihelp-pageslist-example": "الحصول على النتائج 10-19 من PagesList"
 }
