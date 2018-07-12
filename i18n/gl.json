@@ -16,6 +16,7 @@
 	"pageslist-basepage": "Subpáxinas de (incluír o espazo de nomes):",
 	"apihelp-pageslist-description": "Amosa unha lista de páxinas contidas na wiki.",
 	"apihelp-pageslist-summary": "Amosa unha lista de páxinas contidas na wiki.",
+	"apihelp-pageslist-param-draw": "Valor para asegurar que a resposta coincide con esta petición",
 	"apihelp-pageslist-param-start": "Posición do resultado, a partir de cero",
 	"apihelp-pageslist-param-length": "Número de resultados a devolver",
 	"apihelp-pageslist-example": "Obter os resultados 10-19 de PagesList"
