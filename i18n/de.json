@@ -14,6 +14,7 @@
 	"pageslist-last-user": "Zuletzt geändert von",
 	"pageslist-basepage": "Unterseiten von (inklusive Namensraum):",
 	"apihelp-pageslist-description": "Zeigt eine Liste der Seiten an, die in dem Wiki gespeichert sind.",
+	"apihelp-pageslist-summary": "Zeigt eine Liste der Seiten an, die im Wiki enthalten sind.",
 	"apihelp-pageslist-param-draw": "Wert zur Sicherstellung der Antwort, die dieser Anfrage entspricht.",
 	"apihelp-pageslist-param-start": "Ergebnisversatz, nullbasiert",
 	"apihelp-pageslist-param-length": "Anzahl der zurückzugebenden Ergebnisse",
