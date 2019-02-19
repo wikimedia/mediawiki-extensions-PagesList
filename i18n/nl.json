@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Esketti",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Xbaked potatox"
 		]
 	},
 	"pageslist-desc": "Toont een lijst van pagina ' s",
@@ -11,7 +12,7 @@
 	"pageslist-legend": "Pagina ' s lijst met opties",
 	"pageslist-categories": "Categorie:",
 	"pageslist-title": "Titel",
-	"pageslist-last-modified": "Laatste wijziging",
+	"pageslist-last-modified": "Laatst gewijzigd",
 	"pageslist-last-user": "Laatst gewijzigd door",
-	"pageslist-basepage": "Subpagina ' s van (onder andere naamruimte):"
+	"pageslist-basepage": "Subpagina's van (inclusief naamruimte):"
 }
