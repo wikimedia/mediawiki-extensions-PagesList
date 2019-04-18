@@ -2,7 +2,7 @@
 /**
  * PagesList extension
  *
- * For more info see http://mediawiki.org/wiki/Extension:PagesList
+ * For more info see https://mediawiki.org/wiki/Extension:PagesList
  *
  * @file
  * @ingroup Extensions
