@@ -1,6 +1,7 @@
 <?php
 
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  *
@@ -72,7 +73,7 @@ class PagesList extends ContextSource {
 	/**
 	 * Result object for the query. Warning: seek before use.
 	 *
-	 * @var ResultWrapper
+	 * @var IResultWrapper
 	 */
 	public $result;
 
@@ -105,8 +106,8 @@ class PagesList extends ContextSource {
 	 * Perform the db query
 	 * The query code is based on ContribsPager
 	 *
-	 * @param string $offset Index offset, inclusive
-	 * @param int $limit Exact query limit
+	 * @param string|bool $offset Index offset, inclusive
+	 * @param int|bool $limit Exact query limit
 	 * @param string $indexField
 	 * @param bool $descending Query direction, false for ascending, true for descending
 	 */
@@ -236,9 +237,6 @@ class PagesList extends ContextSource {
 	}
 
 	function getList( $format, $showLastUser, $showLastModification, OutputPage $out = null ) {
-		if ( !isset( $out ) ) {
-			$out = $this->getOutput();
-		}
 		$useAjax = false;
 		switch ( $format ) {
 			case 'datatable':
