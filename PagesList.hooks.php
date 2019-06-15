@@ -95,7 +95,7 @@ class PagesListHooks {
 			}
 		}
 
-		$pagesList = new PagesList( wfGetDB( DB_SLAVE ), $namespaceId, $params['invert'],
+		$pagesList = new PagesList( wfGetDB( DB_REPLICA ), $namespaceId, $params['invert'],
 			$params['associated'], $categoryTitle, $basePageTitle );
 
 		if ( is_null( $params['format'] ) ) {

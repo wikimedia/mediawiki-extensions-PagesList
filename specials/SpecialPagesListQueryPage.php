@@ -25,7 +25,7 @@ class SpecialPagesListQueryPage extends QueryPage {
 		$opts = $this->fetchOptionsFromRequest( PagesListOptions::getDefaultOptions() );
 		$categoryTitle = Title::makeTitleSafe( NS_CATEGORY, $opts['categories'] );
 		$basePageTitle = Title::newFromText( $opts['basepage'] );
-		$this->pagesList = new PagesList( wfGetDB( DB_SLAVE ), $opts['namespace'], $opts['invert'],
+		$this->pagesList = new PagesList( wfGetDB( DB_REPLICA ), $opts['namespace'], $opts['invert'],
 			$opts['associated'], $categoryTitle, $basePageTitle );
 		$this->pagesListOptions = new PagesListOptions(
 			$this->getPageTitle(), $opts, $this->getContext() );
