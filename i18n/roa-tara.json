@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"pageslist-desc": "Fà 'ndrucà 'n'elenghe de pàggene",
+	"pageslist": "Elenghe de le pàggene",
+	"pageslistquerypage": "Pàgene de 'nderrogazione de l'elenghe de le pàggene",
+	"pageslist-legend": "Opziune de l'elenghe de le pàggene",
+	"pageslist-categories": "Categorije:",
+	"pageslist-title": "Titole",
+	"pageslist-last-modified": "Urteme cangiamende",
+	"pageslist-last-user": "Urteme cangiamende da",
+	"pageslist-basepage": "Sottopàggene de ('nglude namespace):",
+	"apihelp-pageslist-description": "Fà 'ndrucà 'n'elenghe de pàggene ca ste jndr'à 'na uicchi.",
+	"apihelp-pageslist-summary": "Fà 'ndrucà 'n'elenghe de pàggene ca ste jndr'à 'na uicchi.",
+	"apihelp-pageslist-param-draw": "'U valore pe avè 'na resposte ca s'accocchie cu sta richieste",
+	"apihelp-pageslist-param-start": "Distanze d'u resultate, cu base zero",
+	"apihelp-pageslist-param-length": "Numere de le resultate da turnà",
+	"apihelp-pageslist-example": "Pigghie le resultate 10-19 da l'elenghe de le pàggene"
+}
