@@ -31,7 +31,7 @@ class PagesListAPI extends ApiBase {
 		$request = $this->extractRequestParams();
 
 		/** @todo implement the rest of the parameters to the constructor */
-		$this->pagesList = new PagesList( wfGetDB( DB_SLAVE ) );
+		$this->pagesList = new PagesList( wfGetDB( DB_REPLICA ) );
 		/**
 		 * @todo Gets the total rows. This is queried on every AJAX call,
 		 * which is bad for performance.
