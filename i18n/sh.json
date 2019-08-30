@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"pageslist-desc": "Prikazuje spisak stranica",
+	"pageslist": "Spisak stranica",
+	"pageslistquerypage": "Upit spisaka stranica",
+	"pageslist-legend": "Opcije spiska stranica",
+	"pageslist-categories": "Kategorija:",
+	"pageslist-title": "Naslov",
+	"pageslist-last-modified": "Posljednja promjena",
+	"pageslist-last-user": "Posljednji promjenitelj",
+	"pageslist-basepage": "Podstranici od (uključ. imenski prostor):",
+	"apihelp-pageslist-description": "Daje potpuni spisak stranica što sadrži wiki.",
+	"apihelp-pageslist-summary": "Daje potpuni spisak stranica što sadrži wiki.",
+	"apihelp-pageslist-param-draw": "Vrijednost koga osigurava odaziv da odgovara ovom upitu",
+	"apihelp-pageslist-param-start": "Otstupanje ishoda, na nularnom temelju",
+	"apihelp-pageslist-param-length": "Broj stavki u ishodu upita",
+	"apihelp-pageslist-example": "Daj stavke 10-19 sa Spisak stranica"
+}
