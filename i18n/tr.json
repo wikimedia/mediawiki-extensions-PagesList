@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"pageslist-desc": "Sayfaların listesini gösterir",
+	"pageslist": "Sayfa Listesi",
+	"pageslistquerypage": "Sayfa Listesi Sorgu Sayfası",
+	"pageslist-legend": "Sayfa listesi seçenekleri",
+	"pageslist-categories": "Kategori:",
+	"pageslist-title": "Başlık",
+	"pageslist-last-modified": "Son değiştiren",
+	"pageslist-last-user": "Son değiştiren",
+	"pageslist-basepage": "Alt sayfaları (ad alanını içerir):",
+	"apihelp-pageslist-description": "Wikide bulunan sayfaların bir listesini gösterir.",
+	"apihelp-pageslist-summary": "Wiki'de bulunan sayfaların bir listesini gösterir.",
+	"apihelp-pageslist-param-draw": "Yanıtın bu istekle eşleşmesini sağlamak için değer",
+	"apihelp-pageslist-param-start": "Sonuç ofseti, sıfır tabanlı",
+	"apihelp-pageslist-param-length": "Döndürülecek sonuç sayısı",
+	"apihelp-pageslist-example": "PagesList'ten 10-19 sonuç alın"
+}
