@@ -27,12 +27,12 @@
 		"PagesListMagic": "PagesList.magic.php"
 	},
 	"AutoloadClasses": {
-		"PagesList": "PagesList.class.php",
-		"PagesListHooks": "PagesList.hooks.php",
-		"PagesListOptions": "specials/PagesListOptions.php",
-		"SpecialPagesList": "specials/SpecialPagesList.php",
-		"SpecialPagesListQueryPage": "specials/SpecialPagesListQueryPage.php",
-		"PagesListAPI": "PagesListAPI.php"
+		"PagesList": "includes/PagesList.php",
+		"PagesListHooks": "includes/PagesListHooks.php",
+		"PagesListOptions": "includes/specials/PagesListOptions.php",
+		"SpecialPagesList": "includes/specials/SpecialPagesList.php",
+		"SpecialPagesListQueryPage": "includes/specials/SpecialPagesListQueryPage.php",
+		"PagesListAPI": "includes/api/PagesListAPI.php"
 	},
 	"ResourceModules": {
 		"ext.PagesList": {
