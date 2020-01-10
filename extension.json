@@ -1,0 +1,75 @@
+{
+	"name": "PagesList",
+	"version": "0.4.0",
+	"author": [
+		"Ike Hecht"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:PagesList",
+	"descriptionmsg": "pageslist-desc",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.29.0"
+	},
+	"APIModules": {
+		"pageslist": "PagesListAPI"
+	},
+	"SpecialPages": {
+		"PagesList": "SpecialPagesList",
+		"PagesListQueryPage": "SpecialPagesListQueryPage"
+	},
+	"MessagesDirs": {
+		"PagesList": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"PagesListAlias": "PagesList.i18n.alias.php",
+		"PagesListMagic": "PagesList.magic.php"
+	},
+	"AutoloadClasses": {
+		"PagesList": "PagesList.class.php",
+		"PagesListHooks": "PagesList.hooks.php",
+		"PagesListOptions": "specials/PagesListOptions.php",
+		"SpecialPagesList": "specials/SpecialPagesList.php",
+		"SpecialPagesListQueryPage": "specials/SpecialPagesListQueryPage.php",
+		"PagesListAPI": "PagesListAPI.php"
+	},
+	"ResourceModules": {
+		"ext.PagesList": {
+			"scripts": "modules/ext.PagesList.datatables.js",
+			"dependencies": "ext.PagesList.datatables"
+		},
+		"ext.PagesList.datatables": {
+			"scripts": "modules/DataTables/media/js/jquery.dataTables.js",
+			"styles": "modules/DataTables/media/css/jquery.dataTables.css"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "PagesList"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "PagesListHooks::setupParserFunction",
+		"BeforePageDisplay": "PagesListHooks::onBeforePageDisplay",
+		"ResourceLoaderGetConfigVars": "PagesListHooks::onResourceLoaderGetConfigVars"
+	},
+	"config": {
+		"PagesListShowLastUser": {
+			"description": "Show a column on Special:PagesList that shows who the page was last modified by.",
+			"value": false
+		},
+		"PagesListShowLastModification": {
+			"description": "Show a column on Special:PagesList that shows when the page was last modified. Possible values:\n\nfalse - Don't display this column\nPagesList::LAST_MODIFICATION_HUMAN - Display this column in human-readable format (i.e. \"3 minutes ago\" or \"Friday at 07:20\")\ntrue|PagesList::LAST_MODIFICATION_DATE - Display this column, showing the date",
+			"value": false
+		},
+		"PagesListDataTablesOptions": {
+			"description": "An array of options for the DataTables plugin. See https://datatables.net/reference/option/ for more information.\n\nExample:\n[\n\t'iDisplayLength' => 25,\n\t// Don't sort by first column - results in a sort by \"last modified\", descending\n\t'aaSorting' => [] ]",
+			"value": []
+		},
+		"PagesListUseAjax": {
+			"description": "Only partially functional - some of the DataTables bells and whistles are disabled and does not limit results by namespace and such. See the js file and the API class. Let's keep this undocumented, OK?",
+			"value": false
+		}
+	},
+	"manifest_version": 2
+}

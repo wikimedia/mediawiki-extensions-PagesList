@@ -9,85 +9,17 @@
  * @author Ike Hecht, 2015
  * @license GNU General Public Licence 2.0 or later
  */
-$wgExtensionCredits['other'][] = array(
-	'path' => __FILE__,
-	'name' => 'PagesList',
-	'author' => array(
-		'Ike Hecht',
-	),
-	'version' => '0.3.0',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:PagesList',
-	'descriptionmsg' => 'pageslist-desc',
-);
-
-$wgAutoloadClasses['PagesList'] = __DIR__ . '/PagesList.class.php';
-$wgAutoloadClasses['PagesListHooks'] = __DIR__ . '/PagesList.hooks.php';
-$wgAutoloadClasses['PagesListOptions'] = __DIR__ . '/specials/PagesListOptions.php';
-$wgAutoloadClasses['SpecialPagesList'] = __DIR__ . '/specials/SpecialPagesList.php';
-$wgAutoloadClasses['SpecialPagesListQueryPage'] = __DIR__ .
-	'/specials/SpecialPagesListQueryPage.php';
-$wgAutoloadClasses['PagesListAPI'] = __DIR__ . '/PagesListAPI.php';
-
-$wgAPIModules['pageslist'] = 'PagesListAPI';
-
-$wgMessagesDirs['PagesList'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['PagesListAlias'] = __DIR__ . '/PagesList.i18n.alias.php';
-$wgExtensionMessagesFiles['PagesListMagic'] = __DIR__ . '/PagesList.magic.php';
-
-$wgSpecialPages['PagesList'] = 'SpecialPagesList';
-$wgSpecialPages['PagesListQueryPage'] = 'SpecialPagesListQueryPage';
-
-$wgHooks['ParserFirstCallInit'][] = 'PagesListHooks::setupParserFunction';
-$wgHooks['BeforePageDisplay'][] = 'PagesListHooks::onBeforePageDisplay';
-$wgHooks['ResourceLoaderGetConfigVars'][] = 'PagesListHooks::onResourceLoaderGetConfigVars';
-
-$wgResourceModules['ext.PagesList'] = array(
-	'scripts' => 'modules/ext.PagesList.datatables.js',
-	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'PagesList',
-	'dependencies' => 'ext.PagesList.datatables'
-);
-
-$wgResourceModules['ext.PagesList.datatables'] = array(
-	'scripts' => 'modules/DataTables/media/js/jquery.dataTables.js',
-	'styles' => 'modules/DataTables/media/css/jquery.dataTables.css',
-	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'PagesList'
-);
-
-/* Configuration */
-/**
- * Show a column on Special:PagesList that shows who the page was last modified by
- */
-$wgPagesListShowLastUser = false;
-
-/**
- * Show a column on Special:PagesList that shows when the page was last modified
- *
- * Possible values:
- *	false - Don't display this column
- *	PagesList::LAST_MODIFICATION_HUMAN - Display this column in human-readable format
- *		(i.e. "3 minutes ago" or "Friday at 07:20")
- *	true|PagesList::LAST_MODIFICATION_DATE - Display this column, showing the date
- */
-$wgPagesListShowLastModification = false;
-
-/**
- * An array of options for the DataTables plugin. See https://datatables.net/reference/option/ for
- * more information.
- *
- * Example:
- * $wgPagesListDataTablesOptions = array(
- * 	'iDisplayLength' => 25,
- *	// Don't sort by first column - results in a sort by "last modified", descending
- * 	'aaSorting' => array()
- * );
- */
-$wgPagesListDataTablesOptions = array();
-
-/**
- * Only partially functional - some of the DataTables bells and whistles are disabled and does not
- * limit results by namespace and such. See the js file and the API class.
- * Let's keep this undocumented, OK?
- */
-$wgPagesListUseAjax = false;
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'PagesList' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['PagesList'] = __DIR__ . '/i18n';
+	$wgExtensionMessagesFiles['PagesList'] = __DIR__ . '/PagesList.i18n.alias.php';
+	wfWarn(
+		'Deprecated PHP entry point used for the PagesList extension. ' .
+		'Please use wfLoadExtension() instead, ' .
+		'see https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the PagesList extension requires MediaWiki 1.29+' );
+}
