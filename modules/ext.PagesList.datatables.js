@@ -1,7 +1,8 @@
-jQuery( document ).ready( function ( $ ) {
-	var conf = mw.config.get( 'wgPagesList' );
-	var optionsConf = JSON.parse( conf.dataTablesOptions );
-	var ajaxConf = {};
+/* eslint-disable */
+( document ).ready( function ( $ ) {
+	var conf = mw.config.get( 'wgPagesList' ),
+		optionsConf = JSON.parse( conf.dataTablesOptions ),
+		ajaxConf = {};
 
 	if ( conf.useAjax ) {
 		ajaxConf = {
@@ -10,24 +11,24 @@ jQuery( document ).ready( function ( $ ) {
 			 * array and Mediawiki's API doesn't like arrays. There is probably a workaround using
 			 * the APIGetAllowedParams or some other hook.
 			 */
-			'searching': false,
-			'ordering' : false,
-			'serverSide': true,
-			'ajax': {
-				'url': mw.util.wikiScript( 'api' ),
-				'type': 'GET',
-				'data': { action: 'pageslist', format: 'json' },
-				'dataType': 'json'
+			searching: false,
+			ordering: false,
+			serverSide: true,
+			ajax: {
+				url: mw.util.wikiScript( 'api' ),
+				type: 'GET',
+				data: { action: 'pageslist', format: 'json' },
+				dataType: 'json'
 			},
-			'columns': [
-				{ 'data': 'title' }
+			columns: [
+				{ data: 'title' }
 			]
 		};
 		if ( conf.showLastUser ) {
-			ajaxConf['columns'].push( { 'data': 'rev_user_text' } );
+			ajaxConf.columns.push( { data: 'rev_user_text' } );
 		}
 		if ( conf.showLastModification ) {
-			ajaxConf['columns'].push( { 'data': 'rev_timestamp' } );
+			ajaxConf.columns.push( { data: 'rev_timestamp' } );
 		}
 	}
 
