@@ -3,10 +3,11 @@
 		"authors": [
 			"Esketti",
 			"Sjoerddebruin",
-			"Xbaked potatox"
+			"Xbaked potatox",
+			"Mainframe98"
 		]
 	},
-	"pageslist-desc": "Toont een lijst van pagina ' s",
+	"pageslist-desc": "Toont een lijst van pagina's",
 	"pageslist": "Lijst met pagina's",
 	"pageslistquerypage": "Pagina ' S Query Lijst Van Pagina",
 	"pageslist-legend": "Pagina ' s lijst met opties",
@@ -14,5 +15,6 @@
 	"pageslist-title": "Titel",
 	"pageslist-last-modified": "Laatst gewijzigd",
 	"pageslist-last-user": "Laatst gewijzigd door",
-	"pageslist-basepage": "Subpagina's van (inclusief naamruimte):"
+	"pageslist-basepage": "Subpagina's van (inclusief naamruimte):",
+	"apihelp-pageslist-param-length": "Aantal resultaten om te tonen"
 }
