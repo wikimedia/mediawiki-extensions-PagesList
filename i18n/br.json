@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Y-M D"
+			"Y-M D",
+			"Fulup"
 		]
 	},
 	"pageslist-categories": "Rummad :",
 	"pageslist-title": "Titl",
-	"pageslist-last-modified": "Kemmet da ziwezhañ"
+	"pageslist-last-modified": "Kemmet da ziwezhañ",
+	"pageslist-last-user": "Kemmet da ziwezhañ gant"
 }
