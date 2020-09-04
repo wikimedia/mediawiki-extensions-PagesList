@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -155,15 +156,16 @@ class PagesList extends ContextSource {
 	 * @return array
 	 */
 	function getQueryInfo() {
-		$tables = array( 'revision', 'page' );
+		$revQuery = MediaWikiServices::getInstance()->getRevisionStore()->getQueryInfo();
+		$tables = $query['tables'] + array( 'revision', 'page' );
 		$fields = array(
 			'namespace' => 'page_namespace',
 			'title' => 'page_title',
 			'value' => 'rev_timestamp',
-			'userId' => 'rev_user',
-			'userName' => 'rev_user_text'
+			'userId' => $revQuery['fields']['rev_user'],
+			'userName' => $revQuery['fields']['rev_user_text'],
 		);
-		$join_cond = array();
+		$join_cond = $query['joins'];
 
 		$conds = array(
 			'page_is_redirect' => 0,
