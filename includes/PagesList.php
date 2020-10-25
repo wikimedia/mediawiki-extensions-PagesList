@@ -156,8 +156,8 @@ class PagesList extends ContextSource {
 	 * @return array
 	 */
 	function getQueryInfo() {
-		$revQuery = MediaWikiServices::getInstance()->getRevisionStore()->getQueryInfo();
-		$tables = $query['tables'] + array( 'revision', 'page' );
+		$revQuery = MediaWikiServices::getInstance()->getRevisionStore()->getQueryInfo( [ 'user', 'page' ] );
+		$tables = $revQuery['tables'];
 		$fields = array(
 			'namespace' => 'page_namespace',
 			'title' => 'page_title',
@@ -165,7 +165,7 @@ class PagesList extends ContextSource {
 			'userId' => $revQuery['fields']['rev_user'],
 			'userName' => $revQuery['fields']['rev_user_text'],
 		);
-		$join_cond = $query['joins'];
+		$join_cond = $revQuery['joins'];
 
 		$conds = array(
 			'page_is_redirect' => 0,
