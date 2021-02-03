@@ -42,6 +42,18 @@ $specialPageAliases['mk'] = [
 	'PagesListQueryPage' => [ 'СписокНаСтранициСтраницаЗаБарање' ],
 ];
 
+/** Serbian Cyrillic (српски (ћирилица)) */
+$specialPageAliases['sr-ec'] = [
+	'PagesList' => [ 'СписакСтраница' ],
+	'PagesListQueryPage' => [ 'СписакСтраницаЗаБирање' ],
+];
+
+/** Serbian Latin (srpski (latinica)) */
+$specialPageAliases['sr-el'] = [
+	'PagesList' => [ 'SpisakStranica' ],
+	'PagesListQueryPage' => [ 'SpisakStranicaZaBiranje' ],
+];
+
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = [
 	'PagesList' => [ 'فہرست_صفحات' ],
