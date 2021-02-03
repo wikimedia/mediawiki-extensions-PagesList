@@ -6,49 +6,49 @@
  * @ingroup Extensions
  */
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'PagesList' => array( 'PagesList' ),
-	'PagesListQueryPage' => array( 'PagesListQueryPage' ),
-);
+$specialPageAliases['en'] = [
+	'PagesList' => [ 'PagesList' ],
+	'PagesListQueryPage' => [ 'PagesListQueryPage' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'PagesList' => array( 'قائمة_الصفحات' ),
-	'PagesListQueryPage' => array( 'صفحة_قائمة_استعلام_الصفحات' ),
-);
+$specialPageAliases['ar'] = [
+	'PagesList' => [ 'قائمة_الصفحات' ],
+	'PagesListQueryPage' => [ 'صفحة_قائمة_استعلام_الصفحات' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'PagesList' => array( 'Seitenliste' ),
-	'PagesListQueryPage' => array( 'Seitenlistenabfrageseite' ),
-);
+$specialPageAliases['de'] = [
+	'PagesList' => [ 'Seitenliste' ],
+	'PagesListQueryPage' => [ 'Seitenlistenabfrageseite' ],
+];
 
 /** Luxembourgish (Lëtzebuergesch) */
-$specialPageAliases['lb'] = array(
-	'PagesList' => array( 'Lëscht_vu_Säiten' ),
-);
+$specialPageAliases['lb'] = [
+	'PagesList' => [ 'Lëscht_vu_Säiten' ],
+];
 
 /** Northern Luri (لۊری شومالی) */
-$specialPageAliases['lrc'] = array(
-	'PagesList' => array( 'نومگە_بألگە_یا' ),
-);
+$specialPageAliases['lrc'] = [
+	'PagesList' => [ 'نومگە_بألگە_یا' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'PagesList' => array( 'СписокНаСтраници' ),
-	'PagesListQueryPage' => array( 'СписокНаСтранициСтраницаЗаБарање' ),
-);
+$specialPageAliases['mk'] = [
+	'PagesList' => [ 'СписокНаСтраници' ],
+	'PagesListQueryPage' => [ 'СписокНаСтранициСтраницаЗаБарање' ],
+];
 
 /** Urdu (اردو) */
-$specialPageAliases['ur'] = array(
-	'PagesList' => array( 'فہرست_صفحات' ),
-);
+$specialPageAliases['ur'] = [
+	'PagesList' => [ 'فہرست_صفحات' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'PagesList' => array( '页面列表' ),
-	'PagesListQueryPage' => array( '页面列表查询页面' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'PagesList' => [ '页面列表' ],
+	'PagesListQueryPage' => [ '页面列表查询页面' ],
+];

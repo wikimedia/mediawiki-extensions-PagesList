@@ -8,18 +8,16 @@
 
 class SpecialPagesListQueryPage extends QueryPage {
 	/**
-	 *
 	 * @var PagesList
 	 */
 	private $pagesList;
 
 	/**
-	 *
 	 * @var PagesListOptions
 	 */
 	private $pagesListOptions;
 
-	public function __construct(  ) {
+	public function __construct() {
 		parent::__construct( 'PagesListQueryPage' );
 
 		$opts = $this->fetchOptionsFromRequest( PagesListOptions::getDefaultOptions() );
@@ -65,6 +63,9 @@ class SpecialPagesListQueryPage extends QueryPage {
 		return false;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'pages';
 	}
@@ -88,6 +89,7 @@ class SpecialPagesListQueryPage extends QueryPage {
 	public function getPageHeader() {
 		return $this->pagesListOptions->getPageHeader();
 	}
+
 	public function isIncludable() {
 		return true;
 	}

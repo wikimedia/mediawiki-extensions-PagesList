@@ -6,7 +6,6 @@
  */
 class PagesListAPI extends ApiBase {
 	/**
-	 *
 	 * @var PagesList
 	 */
 	private $pagesList;
@@ -19,10 +18,9 @@ class PagesListAPI extends ApiBase {
 	private $totalRows;
 
 	/**
-	 *
 	 * @global boolean $wgPagesListShowLastUser
 	 * @global boolean $wgPagesListShowLastModification
-	 * @return boolean
+	 * @return bool
 	 */
 	public function execute() {
 		global $wgPagesListShowLastUser, $wgPagesListShowLastModification;
@@ -61,24 +59,23 @@ class PagesListAPI extends ApiBase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedParams() {
-		return array(
-			'draw' => array(
+		return [
+			'draw' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false
-			),
-			'start' => array(
+			],
+			'start' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false
-			),
-			'length' => array(
+			],
+			'length' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false
-			)
-		);
+			]
+		];
 	}
 
 	/**
@@ -87,9 +84,9 @@ class PagesListAPI extends ApiBase {
 	 * @return array
 	 */
 	public function getExamplesMessages() {
-		return array(
+		return [
 			'action=' . $this->getModuleName() . '&draw=2&format=json&start=10&length=10'
 			=> 'apihelp-pageslist-example'
-		);
+		];
 	}
 }

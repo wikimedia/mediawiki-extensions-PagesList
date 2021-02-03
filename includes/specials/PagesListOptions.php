@@ -7,22 +7,19 @@
  */
 class PagesListOptions extends ContextSource {
 	/**
-	 *
 	 * @var Title
 	 */
 	private $pageTitle;
 
 	/**
-	 *
 	 * @var FormOptions
 	 */
 	private $opts;
 
 	/**
-	 *
 	 * @param Title $pageTitle
 	 * @param FormOptions $opts
-	 * @param IContextSource $context
+	 * @param IContextSource|null $context
 	 */
 	function __construct( Title $pageTitle, FormOptions $opts, IContextSource $context = null ) {
 		$this->pageTitle = $pageTitle;
@@ -49,7 +46,7 @@ class PagesListOptions extends ContextSource {
 		$count = 0;
 		$submit = ' ' . Xml::submitbutton( $this->msg( 'allpagessubmit' )->text() );
 
-		$out = Xml::openElement( 'table', array( 'id' => 'pageslist-header' ) );
+		$out = Xml::openElement( 'table', [ 'id' => 'pageslist-header' ] );
 		foreach ( $extraOpts as $name => $optionRow ) {
 			# Add submit button to the last row only
 			++$count;
@@ -58,14 +55,14 @@ class PagesListOptions extends ContextSource {
 			$out .= Xml::openElement( 'tr' );
 			if ( is_array( $optionRow ) ) {
 				$out .= Xml::tags(
-						'td', array( 'class' => 'mw-label mw-' . $name . '-label' ), $optionRow[0]
+						'td', [ 'class' => 'mw-label mw-' . $name . '-label' ], $optionRow[0]
 				);
 				$out .= Xml::tags(
-						'td', array( 'class' => 'mw-input' ), $optionRow[1] . $addSubmit
+						'td', [ 'class' => 'mw-input' ], $optionRow[1] . $addSubmit
 				);
 			} else {
 				$out .= Xml::tags(
-						'td', array( 'class' => 'mw-input', 'colspan' => 2 ), $optionRow . $addSubmit
+						'td', [ 'class' => 'mw-input', 'colspan' => 2 ], $optionRow . $addSubmit
 				);
 			}
 			$out .= Xml::closeElement( 'tr' );
@@ -80,10 +77,10 @@ class PagesListOptions extends ContextSource {
 		$t = $this->pageTitle;
 		$out .= Html::hidden( 'title', $t->getPrefixedText() );
 
-		$form = Xml::tags( 'form', array( 'action' => $wgScript ), $out );
+		$form = Xml::tags( 'form', [ 'action' => $wgScript ], $out );
 
 		return Xml::fieldset(
-				$this->msg( 'pageslist-legend' )->text(), $form, array( 'class' => 'ploptions' )
+				$this->msg( 'pageslist-legend' )->text(), $form, [ 'class' => 'ploptions' ]
 		);
 	}
 
@@ -94,11 +91,11 @@ class PagesListOptions extends ContextSource {
 	 * @return array
 	 */
 	function getExtraOptions( $opts ) {
-		$opts->consumeValues( array(
+		$opts->consumeValues( [
 			'namespace', 'invert', 'associated', 'categories', 'basepage'
-		) );
+		] );
 
-		$extraOpts = array();
+		$extraOpts = [];
 		$extraOpts['namespace'] = $this->namespaceFilterForm( $opts );
 		$extraOpts['category'] = $this->categoryFilterForm( $opts );
 		$extraOpts['basepage'] = $this->basepageFilterForm( $opts );
@@ -114,20 +111,20 @@ class PagesListOptions extends ContextSource {
 	 */
 	protected function namespaceFilterForm( FormOptions $opts ) {
 		$nsSelect = Html::namespaceSelector(
-				array( 'selected' => $opts['namespace'], 'all' => '' ),
-				array( 'name' => 'namespace', 'id' => 'namespace' )
+				[ 'selected' => $opts['namespace'], 'all' => '' ],
+				[ 'name' => 'namespace', 'id' => 'namespace' ]
 		);
 		$nsLabel = Xml::label( $this->msg( 'namespace' )->text(), 'namespace' );
 		$invert = Xml::checkLabel(
 				$this->msg( 'invert' )->text(), 'invert', 'nsinvert', $opts['invert'],
-				array( 'title' => $this->msg( 'tooltip-invert' )->text() )
+				[ 'title' => $this->msg( 'tooltip-invert' )->text() ]
 		);
 		$associated = Xml::checkLabel(
 				$this->msg( 'namespace_association' )->text(), 'associated', 'nsassociated',
-				$opts['associated'], array( 'title' => $this->msg( 'tooltip-namespace_association' )->text() )
+				$opts['associated'], [ 'title' => $this->msg( 'tooltip-namespace_association' )->text() ]
 		);
 
-		return array( $nsLabel, "$nsSelect $invert $associated" );
+		return [ $nsLabel, "$nsSelect $invert $associated" ];
 	}
 
 	/**
@@ -141,7 +138,7 @@ class PagesListOptions extends ContextSource {
 		list( $label, $input ) = Xml::inputLabelSep( $this->msg( 'pageslist-categories' )->text(),
 				'categories', 'mw-categories', false, $opts['categories'] );
 
-		return array( $label, $input );
+		return [ $label, $input ];
 	}
 
 	/**
@@ -152,7 +149,7 @@ class PagesListOptions extends ContextSource {
 		list( $label, $input ) = Xml::inputLabelSep( $this->msg( 'pageslist-basepage' )->text(),
 				'basepage', 'mw-basepage', false, $opts['basepage'] );
 
-		return array( $label, $input );
+		return [ $label, $input ];
 	}
 
 	/**

@@ -5,8 +5,6 @@ use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
 /**
- *
- *
  * @author Ike Hecht
  */
 class PagesList extends ContextSource {
@@ -31,14 +29,14 @@ class PagesList extends ContextSource {
 	 * Invert the namesace selection - select every namespace other than the one stored in
 	 * $namespace
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	private $nsInvert;
 
 	/**
 	 * Include the associated namespace of $namespace - its Talk page
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	private $associated;
 
@@ -67,7 +65,7 @@ class PagesList extends ContextSource {
 	 * Flag to indicated that the DataTables JS & CSS should later be loaded because there is a
 	 * DataTables item on this page
 	 *
-	 * @var Boolean
+	 * @var bool
 	 */
 	public static $loadDataTables = false;
 
@@ -79,18 +77,16 @@ class PagesList extends ContextSource {
 	public $result;
 
 	/**
-	 *
 	 * @param IDatabase $db
-	 * @param int $namespace A nampesace index
-	 * @param boolean $nsInvert Set to true to show pages in all namespaces EXCEPT $namespace
-	 * @param boolean $associated
-	 * @param Title $category
-	 * @param Title $basePage
-	 * @param IContextSource $context
+	 * @param int|null $namespace A nampesace index
+	 * @param bool $nsInvert Set to true to show pages in all namespaces EXCEPT $namespace
+	 * @param bool $associated
+	 * @param Title|null $category
+	 * @param Title|null $basePage
+	 * @param IContextSource|null $context
 	 */
 	function __construct( IDatabase $db, $namespace = null, $nsInvert = false, $associated = false,
 		Title $category = null, Title $basePage = null, IContextSource $context = null ) {
-
 		if ( $context ) {
 			$this->setContext( $context );
 		}
@@ -136,9 +132,9 @@ class PagesList extends ContextSource {
 		$info = $this->getQueryInfo();
 		$tables = $info['tables'];
 		$fields = $info['fields'];
-		$conds = isset( $info['conds'] ) ? $info['conds'] : array();
-		$options = isset( $info['options'] ) ? $info['options'] : array();
-		$join_conds = isset( $info['join_conds'] ) ? $info['join_conds'] : array();
+		$conds = isset( $info['conds'] ) ? $info['conds'] : [];
+		$options = isset( $info['options'] ) ? $info['options'] : [];
+		$join_conds = isset( $info['join_conds'] ) ? $info['join_conds'] : [];
 
 		$options['ORDER BY'] = $indexField . ( $descending ? ' DESC' : ' ASC' );
 		if ( $offset ) {
@@ -147,7 +143,7 @@ class PagesList extends ContextSource {
 		if ( $limit ) {
 			$options['LIMIT'] = intval( $limit );
 		}
-		return array( $tables, $fields, $conds, $fname, $options, $join_conds );
+		return [ $tables, $fields, $conds, $fname, $options, $join_conds ];
 	}
 
 	/**
@@ -158,19 +154,19 @@ class PagesList extends ContextSource {
 	function getQueryInfo() {
 		$revQuery = MediaWikiServices::getInstance()->getRevisionStore()->getQueryInfo( [ 'user', 'page' ] );
 		$tables = $revQuery['tables'];
-		$fields = array(
+		$fields = [
 			'namespace' => 'page_namespace',
 			'title' => 'page_title',
 			'value' => 'rev_timestamp',
 			'userId' => $revQuery['fields']['rev_user'],
 			'userName' => $revQuery['fields']['rev_user_text'],
-		);
+		];
 		$join_cond = $revQuery['joins'];
 
-		$conds = array(
+		$conds = [
 			'page_is_redirect' => 0,
 			'page_latest=rev_id'
-		);
+		];
 
 		if ( is_int( $this->namespace ) ) {
 			$conds = array_merge( $conds, $this->getNamespaceCond() );
@@ -178,30 +174,30 @@ class PagesList extends ContextSource {
 
 		if ( $this->category instanceof Title ) {
 			$tables[] = 'categorylinks';
-			$conds = array_merge( $conds, array( 'cl_to' => $this->category->getDBkey() ) );
-			$join_cond['categorylinks'] = array( 'INNER JOIN', 'cl_from = page_id' );
+			$conds = array_merge( $conds, [ 'cl_to' => $this->category->getDBkey() ] );
+			$join_cond['categorylinks'] = [ 'INNER JOIN', 'cl_from = page_id' ];
 		}
 
 		if ( $this->basePage instanceof Title ) {
 			$conds = array_merge( $conds,
-				array( 'page_title' . $this->db->buildLike( $this->basePage->getDBkey() .
+				[ 'page_title' . $this->db->buildLike( $this->basePage->getDBkey() .
 					'/', $this->db->anyString() ),
-				'page_namespace' => $this->basePage->getNamespace() )
+				'page_namespace' => $this->basePage->getNamespace() ]
 			);
 		}
 
-		$options = array();
-		$index = false; #todo
+		$options = [];
+		$index = false; # todo
 		if ( $index ) {
-			$options['USE INDEX'] = array( 'revision' => $index );
+			$options['USE INDEX'] = [ 'revision' => $index ];
 		}
-		$queryInfo = array(
+		$queryInfo = [
 			'tables' => $tables,
 			'fields' => $fields,
 			'conds' => $conds,
 			'options' => $options,
 			'join_conds' => $join_cond
-		);
+		];
 
 		return $queryInfo;
 	}
@@ -217,18 +213,18 @@ class PagesList extends ContextSource {
 		$bool_op = $this->nsInvert ? 'AND' : 'OR';
 
 		if ( !$this->associated ) {
-			return array( "page_namespace $eq_op $selectedNS" );
+			return [ "page_namespace $eq_op $selectedNS" ];
 		}
 
 		$associatedNS = $this->db->addQuotes(
 			MWNamespace::getAssociated( $this->namespace )
 		);
 
-		return array(
+		return [
 			"page_namespace $eq_op $selectedNS " .
 			$bool_op .
 			" page_namespace $eq_op $associatedNS"
-		);
+		];
 	}
 
 	/**
@@ -265,7 +261,7 @@ class PagesList extends ContextSource {
 	 * @return array
 	 */
 	public function getOrderFields() {
-		return array( 'page_namespace', 'page_title' );
+		return [ 'page_namespace', 'page_title' ];
 	}
 
 	/**
@@ -273,19 +269,19 @@ class PagesList extends ContextSource {
 	 *
 	 * @param Skin $skin Unused
 	 * @param object $result Result row
-	 * @param boolean $showLastUser
-	 * @param int|boolean $showLastModification
+	 * @param bool $showLastUser
+	 * @param int|bool $showLastModification
 	 * @return string
 	 */
 	protected function getResultTableRow( $skin, $result, $showLastUser = false,
 		$showLastModification = false ) {
 		$output = Html::openElement( 'tr' );
-		$output .= Html::rawElement( 'td', array(), $this->getLinkedTitle( $result ) );
+		$output .= Html::rawElement( 'td', [], $this->getLinkedTitle( $result ) );
 		if ( $showLastUser ) {
-			$output .= Html::rawElement( 'td', array(), $this->getLastUser( $result ) );
+			$output .= Html::rawElement( 'td', [], $this->getLastUser( $result ) );
 		}
 		if ( $showLastModification ) {
-			$output .= Html::element( 'td', array(),
+			$output .= Html::element( 'td', [],
 					$this->getLastModification( $result, $showLastModification ) );
 		}
 		$output .= Html::closeElement( 'tr' );
@@ -293,24 +289,23 @@ class PagesList extends ContextSource {
 	}
 
 	/**
-	 *
-	 * @param boolean $useAjax
-	 * @param boolean $showLastUser
-	 * @param int|boolean $showLastModification
+	 * @param bool $useAjax
+	 * @param bool $showLastUser
+	 * @param int|bool $showLastModification
 	 * @return string HTML table
 	 */
 	protected function getResultTable( $useAjax = true, $showLastUser = false,
 		$showLastModification = false ) {
 		$output = Html::openElement( 'table',
-				array( 'class' => 'pages-list stripe row-border hover' ) );
+				[ 'class' => 'pages-list stripe row-border hover' ] );
 		$output .= Html::openElement( 'thead' );
 		$output .= Html::openElement( 'tr' );
-		$output .= Html::rawElement( 'th', array(), $this->msg( 'pageslist-title' ) );
+		$output .= Html::rawElement( 'th', [], $this->msg( 'pageslist-title' ) );
 		if ( $showLastUser ) {
-			$output .= Html::rawElement( 'th', array(), $this->msg( 'pageslist-last-user' ) );
+			$output .= Html::rawElement( 'th', [], $this->msg( 'pageslist-last-user' ) );
 		}
 		if ( $showLastModification ) {
-			$output .= Html::rawElement( 'th', array(), $this->msg( 'pageslist-last-modified' ) );
+			$output .= Html::rawElement( 'th', [], $this->msg( 'pageslist-last-modified' ) );
 		}
 		$output .= Html::closeElement( 'tr' );
 		$output .= Html::closeElement( 'thead' );
@@ -339,14 +334,14 @@ class PagesList extends ContextSource {
 	/**
 	 * Get an array representing this result, used by the API
 	 *
-	 * @param boolean $showLastUser
-	 * @param boolean $showLastModification
+	 * @param bool $showLastUser
+	 * @param bool $showLastModification
 	 * @return array
 	 */
 	public function getResultArray( $showLastUser = false, $showLastModification = false ) {
-		$array = array();
+		$array = [];
 		while ( $result = $this->result->fetchObject() ) {
-			$arrayElement = array( 'title' => $this->getLinkedTitle( $result ) );
+			$arrayElement = [ 'title' => $this->getLinkedTitle( $result ) ];
 			if ( $showLastUser ) {
 				$arrayElement['rev_user_text'] = $this->getLastUser( $result );
 			}
@@ -362,7 +357,7 @@ class PagesList extends ContextSource {
 	/**
 	 * Add all necessary DataTables scripts and styles to output
 	 *
-	 * @param OutputPage $out
+	 * @param OutputPage &$out
 	 */
 	public static function addDataTablesToOutput( OutputPage &$out ) {
 		$out->addModules( 'ext.PagesList' );
@@ -397,7 +392,7 @@ class PagesList extends ContextSource {
 	 * Get the date of the last modification
 	 *
 	 * @param object $result
-	 * @param int|boolean $showLastModification
+	 * @param int|bool $showLastModification
 	 * @return string HTML
 	 */
 	protected function getLastModification( $result,
@@ -435,16 +430,15 @@ class PagesList extends ContextSource {
 	}
 
 	/**
-	 *
 	 * @param string $format
-	 * @param boolean $showLastUser
-	 * @param int|boolean $showLastModification
+	 * @param bool $showLastUser
+	 * @param int|bool $showLastModification
 	 * @return string HTML list
 	 */
 	protected function getResultList( $format, $showLastUser = false, $showLastModification = false ) {
-		$html = Html::openElement( $format, array( 'class' => 'pageslist' ) );
+		$html = Html::openElement( $format, [ 'class' => 'pageslist' ] );
 		while ( $resultRow = $this->result->fetchObject() ) {
-			$html .= Html::rawElement( 'li', array(),
+			$html .= Html::rawElement( 'li', [],
 					$this->getListItem( $resultRow, $showLastUser, $showLastModification ) );
 		}
 		$html .= Html::closeElement( $format );
@@ -453,14 +447,13 @@ class PagesList extends ContextSource {
 	}
 
 	/**
-	 *
-	 * @param boolean $showLastUser
-	 * @param int|boolean $showLastModification
+	 * @param bool $showLastUser
+	 * @param int|bool $showLastModification
 	 * @return string HTML comma separated list
 	 */
 	protected function getResultPlain( $showLastUser = false, $showLastModification = false ) {
-		$html = Html::openElement( 'div', array( 'class' => 'pageslist' ) );
-		$list = array();
+		$html = Html::openElement( 'div', [ 'class' => 'pageslist' ] );
+		$list = [];
 		while ( $resultRow = $this->result->fetchObject() ) {
 			$list[] = $this->getListItem( $resultRow, $showLastUser, $showLastModification );
 		}
@@ -474,12 +467,12 @@ class PagesList extends ContextSource {
 	 * Get a single list item
 	 *
 	 * @param object $resultRow
-	 * @param boolean $showLastUser
-	 * @param int|boolean $showLastModification
+	 * @param bool $showLastUser
+	 * @param int|bool $showLastModification
 	 * @return string HTML list item
 	 */
 	public function getListItem( $resultRow, $showLastUser, $showLastModification ) {
-		$extras = array();
+		$extras = [];
 		if ( $showLastUser ) {
 			$extras[] = $this->getLastUser( $resultRow );
 		}

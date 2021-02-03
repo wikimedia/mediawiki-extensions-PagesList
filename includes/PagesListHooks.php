@@ -12,19 +12,19 @@ class PagesListHooks {
 	 * Make PagesList vars available to JS
 	 *
 	 * @global array $wgPagesListDataTablesOptions
-	 * @param array $vars
-	 * @return boolean
+	 * @param array &$vars
+	 * @return bool
 	 */
-	public static function onResourceLoaderGetConfigVars( Array &$vars ) {
+	public static function onResourceLoaderGetConfigVars( array &$vars ) {
 		global $wgPagesListDataTablesOptions, $wgPagesListUseAjax,
 		$wgPagesListShowLastUser, $wgPagesListShowLastModification;
 
-		$vars['wgPagesList'] = array(
+		$vars['wgPagesList'] = [
 			'dataTablesOptions' => FormatJson::encode( $wgPagesListDataTablesOptions ),
 			'useAjax' => $wgPagesListUseAjax,
 			'showLastUser' => $wgPagesListShowLastUser,
 			'showLastModification' => $wgPagesListShowLastModification
-		);
+		];
 
 		return true;
 	}
@@ -32,9 +32,9 @@ class PagesListHooks {
 	/**
 	 * If there is a DataTables format on this page, load those modules
 	 *
-	 * @param OutputPage $out
-	 * @param Skin $skin Unused
-	 * @return boolean
+	 * @param OutputPage &$out
+	 * @param Skin &$skin Unused
+	 * @return bool
 	 */
 	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
 		if ( PagesList::$loadDataTables ) {
@@ -47,8 +47,8 @@ class PagesListHooks {
 	/**
 	 * Set up the #pageslist parser function
 	 *
-	 * @param Parser $parser
-	 * @return boolean
+	 * @param Parser &$parser
+	 * @return bool
 	 */
 	public static function setupParserFunction( Parser &$parser ) {
 		$parser->setFunctionHook( 'pageslist', __CLASS__ . '::pageslistParserFunction', Parser::SFH_OBJECT_ARGS );
@@ -76,7 +76,7 @@ class PagesListHooks {
 		global $wgPagesListShowLastUser, $wgPagesListShowLastModification, $wgPagesListUseAjax;
 
 		$params = self::extractOptions( $args, $frame );
-		$options = array( 'namespace', 'invert', 'associated', 'category', 'basepage', 'format' );
+		$options = [ 'namespace', 'invert', 'associated', 'category', 'basepage', 'format' ];
 		foreach ( $options as $option ) {
 			$params[$option] = isset( $params[$option] ) ? $params[$option] : null;
 		}
@@ -86,7 +86,7 @@ class PagesListHooks {
 
 		$namespaceId = self::getNamespaceIndex( $params['namespace'] );
 
-		$bools = array( 'invert', 'associated' );
+		$bools = [ 'invert', 'associated' ];
 		foreach ( $bools as $bool ) {
 			if ( strtolower( $params[$bool] ) == 'yes' ) {
 				$params[$bool] = true;
@@ -98,7 +98,7 @@ class PagesListHooks {
 		$pagesList = new PagesList( wfGetDB( DB_REPLICA ), $namespaceId, $params['invert'],
 			$params['associated'], $categoryTitle, $basePageTitle );
 
-		if ( is_null( $params['format'] ) ) {
+		if ( $params['format'] === null ) {
 			$params['format'] = 'datatable';
 		}
 
@@ -108,7 +108,7 @@ class PagesListHooks {
 
 		$output = $pagesList->getList( $params['format'], $wgPagesListShowLastUser,
 			$wgPagesListShowLastModification );
-		return array( $output, 'noparse' => true, 'isHTML' => true );
+		return [ $output, 'noparse' => true, 'isHTML' => true ];
 	}
 
 	/**
@@ -120,7 +120,7 @@ class PagesListHooks {
 	 * @return array
 	 */
 	public static function extractOptions( array $options, PPFrame $frame ) {
-		$results = array();
+		$results = [];
 
 		foreach ( $options as $option ) {
 			$pair = explode( '=', $frame->expand( $option ), 2 );
@@ -146,7 +146,7 @@ class PagesListHooks {
 			$namespaceName = '';
 		}
 
-		if ( is_null( $namespaceName ) ) {
+		if ( $namespaceName === null ) {
 			return null;
 		} else {
 			return MWNamespace::getCanonicalIndex( strtolower( $namespaceName ) );

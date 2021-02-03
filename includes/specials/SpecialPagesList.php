@@ -8,13 +8,11 @@
  */
 class SpecialPagesList extends IncludableSpecialPage {
 	/**
-	 *
 	 * @var PagesList
 	 */
 	private $pagesList;
 
 	/**
-	 *
 	 * @var PagesListOptions
 	 */
 	private $pagesListOptions;
@@ -65,6 +63,9 @@ class SpecialPagesList extends IncludableSpecialPage {
 		return $opts;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'pages';
 	}
