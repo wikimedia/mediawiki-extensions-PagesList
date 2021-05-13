@@ -73,7 +73,6 @@ class SpecialPagesListQueryPage extends QueryPage {
 	/**
 	 * Borrowed from AncientPagesPage
 	 *
-	 * @global Language $wgContLang
 	 * @global boolean $wgPagesListShowLastModification
 	 * @param Skin $skin Unused
 	 * @param object $result Result row
