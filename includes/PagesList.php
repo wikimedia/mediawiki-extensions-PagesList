@@ -376,15 +376,14 @@ class PagesList extends ContextSource {
 	/**
 	 * Get a linked page title
 	 *
-	 * @global Language $wgContLang
 	 * @param object $result
 	 * @return string HTML
 	 */
 	protected function getLinkedTitle( $result ) {
-		global $wgContLang;
 		$title = Title::makeTitle( $result->namespace, $result->title );
 		return Linker::linkKnown(
-				$title, htmlspecialchars( $wgContLang->convert( $title->getPrefixedText() ) )
+			$title, htmlspecialchars( MediaWikiServices::getInstance()->getContentLanguage()
+				->convert( $title->getPrefixedText() ) )
 		);
 	}
 
