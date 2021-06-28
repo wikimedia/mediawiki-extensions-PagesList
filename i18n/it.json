@@ -6,6 +6,7 @@
 		]
 	},
 	"pageslist-categories": "Categoria:",
+	"pageslist-title": "Titolo",
 	"apihelp-pageslist-description": "Mostra un elenco di pagine contenute nel wiki.",
 	"apihelp-pageslist-summary": "Mostra un elenco di pagine contenute nel wiki.",
 	"apihelp-pageslist-param-length": "Numero di risultati da restituire"
