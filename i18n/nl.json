@@ -3,14 +3,15 @@
 		"authors": [
 			"Esketti",
 			"Mainframe98",
+			"McDutchie",
 			"Sjoerddebruin",
 			"Xbaked potatox"
 		]
 	},
 	"pageslist-desc": "Toont een lijst van pagina's",
 	"pageslist": "Lijst met pagina's",
-	"pageslistquerypage": "Pagina ' S Query Lijst Van Pagina",
-	"pageslist-legend": "Pagina ' s lijst met opties",
+	"pageslistquerypage": "Zoekpagina voor paginalijsten",
+	"pageslist-legend": "Opties voor paginalijsten",
 	"pageslist-categories": "Categorie:",
 	"pageslist-title": "Titel",
 	"pageslist-last-modified": "Laatst gewijzigd",
