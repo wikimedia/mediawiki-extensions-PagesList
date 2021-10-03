@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Hooks for PagesList extension
  *
@@ -149,7 +151,9 @@ class PagesListHooks {
 		if ( $namespaceName === null ) {
 			return null;
 		} else {
-			return MWNamespace::getCanonicalIndex( strtolower( $namespaceName ) );
+			return MediaWikiServices::getInstance()
+				->getNamespaceInfo()
+				->getCanonicalIndex( strtolower( $namespaceName ) );
 		}
 	}
 }

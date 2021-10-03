@@ -217,7 +217,9 @@ class PagesList extends ContextSource {
 		}
 
 		$associatedNS = $this->db->addQuotes(
-			MWNamespace::getAssociated( $this->namespace )
+			MediaWikiServices::getInstance()
+				->getNamespaceInfo()
+				->getAssociated( $this->namespace )
 		);
 
 		return [
