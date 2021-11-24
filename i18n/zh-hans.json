@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Xiplus"
 		]
 	},
 	"pageslist-desc": "显示页面列表",
@@ -12,7 +13,7 @@
 	"pageslist-title": "标题",
 	"pageslist-last-modified": "最后修改",
 	"pageslist-last-user": "最后修改由",
-	"pageslist-basepage": "父分类（包括名字空间）：",
+	"pageslist-basepage": "父分类（包括命名空间）：",
 	"apihelp-pageslist-description": "显示包含在wiki中的页面列表。",
 	"apihelp-pageslist-summary": "显示包含在wiki中的页面列表。",
 	"apihelp-pageslist-param-draw": "确保响应匹配此请求的值",
