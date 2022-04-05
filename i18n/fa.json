@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Huji",
-			"Reza1615"
+			"Reza1615",
+			"Beginneruser"
 		]
 	},
 	"pageslist-desc": "نمایش فهرست صفحات",
 	"pageslist": "فهرست صفحات",
-	"pageslistquerypage": "صفحات فهرست پرسمان صفحه",
-	"pageslist-legend": "صفحات فهرست جزئیات",
+	"pageslistquerypage": "صفحه‌های صفحه فهرست پرسمان",
+	"pageslist-legend": "گزینه‌های فهرست صفحات",
 	"pageslist-categories": "رده:",
 	"pageslist-title": "عنوان",
 	"pageslist-last-modified": "آخرین ویرایش",
