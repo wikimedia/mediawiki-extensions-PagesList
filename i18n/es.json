@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiegoAmbrocio",
 			"Macofe",
 			"Ryo567"
 		]
@@ -13,5 +14,7 @@
 	"pageslist-title": "Título",
 	"pageslist-last-modified": "Última modificación",
 	"pageslist-last-user": "Última modificación de",
-	"pageslist-basepage": "Subpáginas de (incluir el espacio de nombres):"
+	"pageslist-basepage": "Subpáginas de (incluir el espacio de nombres):",
+	"apihelp-pageslist-param-length": "Número de resultados a devolver",
+	"apihelp-pageslist-example": "Obtener los resultados 10-19 de la lista de páginas"
 }
