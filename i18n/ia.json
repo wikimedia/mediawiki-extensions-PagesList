@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"pageslist-desc": "Monstra un lista de paginas",
+	"pageslist": "Lista de paginas",
+	"pageslistquerypage": "Pagina de consulta del lista de paginas",
+	"pageslist-legend": "Optiones del lista de paginas",
+	"pageslist-categories": "Categoria:",
+	"pageslist-title": "Titulo",
+	"pageslist-last-modified": "Ultime modification",
+	"pageslist-last-user": "Ultime modification per",
+	"pageslist-basepage": "Subpaginas de (includer le spatio de nomines):",
+	"apihelp-pageslist-description": "Monstra un lista de paginas continite in iste wiki.",
+	"apihelp-pageslist-summary": "Monstra un lista de paginas continite in iste wiki.",
+	"apihelp-pageslist-param-draw": "Valor que assecura que le responsa corresponde a iste requesta",
+	"apihelp-pageslist-param-start": "Position del resultato, a partir de zero",
+	"apihelp-pageslist-param-length": "Numero de resultatos a restituer",
+	"apihelp-pageslist-example": "Obtener le resultatos 10-19 del lista de paginas"
+}
