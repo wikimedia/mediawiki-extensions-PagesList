@@ -426,8 +426,11 @@ class PagesList extends ContextSource {
 	 * @return string HTML
 	 */
 	private function getLastModificationHuman( $result ) {
-		$timestamp = new MWTimestamp( $result->value );
-		return $timestamp->getHumanTimestamp();
+		return $this->getLanguage()->getHumanTimestamp(
+			new MWTimestamp( $result->value ),
+			null,
+			$this->getUser()
+		);
 	}
 
 	/**
