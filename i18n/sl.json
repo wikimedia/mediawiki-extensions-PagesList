@@ -4,7 +4,19 @@
 			"Eleassar"
 		]
 	},
+	"pageslist-desc": "Prikaže seznam strani",
+	"pageslist": "Seznam strani",
 	"pageslistquerypage": "Stran s seznamom strani povpraševanja",
+	"pageslist-legend": "Možnosti seznama strani",
 	"pageslist-categories": "Kategorija:",
-	"pageslist-title": "Naslov"
+	"pageslist-title": "Naslov",
+	"pageslist-last-modified": "Zadnja sprememba",
+	"pageslist-last-user": "Zadnji spremenil",
+	"pageslist-basepage": "Podstrani strani (vključite imenski prostor):",
+	"apihelp-pageslist-description": "Prikaže seznam strani, ki jih vsebuje viki.",
+	"apihelp-pageslist-summary": "Prikaže seznam strani, ki jih vsebuje viki.",
+	"apihelp-pageslist-param-draw": "Vrednost za zagotovitev, da se odgovor ujema s tem zahtevkom",
+	"apihelp-pageslist-param-start": "Odmik zadetkov, od nič",
+	"apihelp-pageslist-param-length": "Število zadetkov za vrnitev",
+	"apihelp-pageslist-example": "Pridobi zadetke 10–19 s seznama strani"
 }
