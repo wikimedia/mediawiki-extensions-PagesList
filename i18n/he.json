@@ -18,6 +18,6 @@
 	"apihelp-pageslist-summary": "הצגת רשימה של דפים שכלולים בוויקי.",
 	"apihelp-pageslist-param-draw": "ערך שמבטיח שהתגובה תואמת את הבקשה הזאת",
 	"apihelp-pageslist-param-start": "היסט תוצאה, מבוסס אפס",
-	"apihelp-pageslist-param-length": "מספר התוצאות להשיב",
+	"apihelp-pageslist-param-length": "מספר התוצאות להחזרה",
 	"apihelp-pageslist-example": "קבלת תוצאות 10-19 מ־PagesList"
 }
