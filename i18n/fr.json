@@ -3,22 +3,23 @@
 		"authors": [
 			"Crochet.david",
 			"Gomoko",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
 	"pageslist-desc": "Affiche une liste de pages",
 	"pageslist": "Liste des pages",
-	"pageslistquerypage": "Liste des pages de la requête de pages",
+	"pageslistquerypage": "Page de requête de liste des pages",
 	"pageslist-legend": "Options de la liste des pages",
-	"pageslist-categories": "Catégorie :",
+	"pageslist-categories": "Catégorie :",
 	"pageslist-title": "Titre",
 	"pageslist-last-modified": "Dernière modification",
 	"pageslist-last-user": "Dernière modification par",
-	"pageslist-basepage": "Sous-pages de (inclure l'espace de noms) :",
-	"apihelp-pageslist-description": "Affiche une liste de pages contenues dans le wiki",
-	"apihelp-pageslist-summary": "Affiche une liste de pages contenues dans le wiki.",
+	"pageslist-basepage": "Sous-pages de (inclure l’espace de noms) :",
+	"apihelp-pageslist-description": "Affiche une liste des pages contenues dans le wiki",
+	"apihelp-pageslist-summary": "Affiche une liste des pages contenues dans le wiki.",
 	"apihelp-pageslist-param-draw": "Valeur pour s’assurer que la réponse correspond à cette requête",
 	"apihelp-pageslist-param-start": "Décalage du résultat, à partir de 0",
 	"apihelp-pageslist-param-length": "Nombre de résultats à renvoyer",
-	"apihelp-pageslist-example": "Obtenir les résultats 10 à 19 de PagesList"
+	"apihelp-pageslist-example": "Obtenir les résultats 10 à 19 de la liste de pages"
 }
