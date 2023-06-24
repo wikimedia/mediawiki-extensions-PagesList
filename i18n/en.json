@@ -13,7 +13,6 @@
 	"pageslist-last-modified": "Last modified",
 	"pageslist-last-user": "Last modified by",
 	"pageslist-basepage": "Subpages of (include namespace):",
-	"apihelp-pageslist-description": "Shows a list of pages contained in the wiki.",
 	"apihelp-pageslist-summary": "Shows a list of pages contained in the wiki.",
 	"apihelp-pageslist-param-draw": "Value to ensure response matches this request",
 	"apihelp-pageslist-param-start": "Result offset, zero-based",
