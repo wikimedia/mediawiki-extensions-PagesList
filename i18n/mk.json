@@ -13,7 +13,6 @@
 	"pageslist-last-modified": "Последна измена",
 	"pageslist-last-user": "Последен изменувач",
 	"pageslist-basepage": "Потстраници на (вклуч. именски простор):",
-	"apihelp-pageslist-description": "Дава целосен список на страници што ги содржи викито.",
 	"apihelp-pageslist-summary": "Дава целосен список на страници што ги содржи викито.",
 	"apihelp-pageslist-param-draw": "Вредност која осигурува одѕивот да одговара на барањево",
 	"apihelp-pageslist-param-start": "Отстап на исходот, на нуларна основа",

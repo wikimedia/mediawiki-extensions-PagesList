@@ -14,7 +14,6 @@
 	"pageslist-last-modified": "Última modificação",
 	"pageslist-last-user": "Última modificação por",
 	"pageslist-basepage": "Subpáginas de (incluir o domínio):",
-	"apihelp-pageslist-description": "Mostra uma lista de páginas contidas na wiki.",
 	"apihelp-pageslist-summary": "Mostra uma lista de páginas contidas na wiki.",
 	"apihelp-pageslist-param-draw": "Valor que assegura que a resposta corresponda a este pedido",
 	"apihelp-pageslist-param-start": "Posição do resultado, a partir de zero",

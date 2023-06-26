@@ -15,7 +15,6 @@
 	"pageslist-last-modified": "آخر تعديل",
 	"pageslist-last-user": "آخر من عدله",
 	"pageslist-basepage": "الصفحات الفرعية لـ (تشمل النطاق):",
-	"apihelp-pageslist-description": "يعرض قائمة بالصفحات الموجودة في الويكي.",
 	"apihelp-pageslist-summary": "يعرض قائمة بالصفحات الموجودة في الويكي.",
 	"apihelp-pageslist-param-draw": "قيمة لضمان استجابة تطابق هذا الطلب",
 	"apihelp-pageslist-param-start": "حيد النتيجة، على أساس الصفر",

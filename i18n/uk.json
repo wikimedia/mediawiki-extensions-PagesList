@@ -14,7 +14,6 @@
 	"pageslist-last-modified": "Остання зміна",
 	"pageslist-last-user": "Остання зміна:",
 	"pageslist-basepage": "Підсторінки (включно з простором назв):",
-	"apihelp-pageslist-description": "Показує список сторінок, які містяться у вікі.",
 	"apihelp-pageslist-summary": "Показує список сторінок, які містяться у вікі.",
 	"apihelp-pageslist-param-draw": "Значення, яке має запевнити, що результат відповідатиме цьому запиту",
 	"apihelp-pageslist-param-start": "Зміщення результату, на основі нуля",

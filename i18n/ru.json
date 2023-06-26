@@ -14,7 +14,6 @@
 	"pageslist-last-modified": "Последнее изменение",
 	"pageslist-last-user": "Изменена",
 	"pageslist-basepage": "Подстраницы (включая пространство имён):",
-	"apihelp-pageslist-description": "Показывает список страниц, содержащихся в вики.",
 	"apihelp-pageslist-summary": "Показывает список страниц, содержащихся в вики.",
 	"apihelp-pageslist-param-draw": "Значение, обеспечивающее соответствие ответа этому запросу",
 	"apihelp-pageslist-param-start": "Смещение итога, отсчитываемое от нуля",

@@ -14,7 +14,6 @@
 	"pageslist-last-modified": "最後修改",
 	"pageslist-last-user": "最後修改由",
 	"pageslist-basepage": "子頁面（包含命名空間）屬於：",
-	"apihelp-pageslist-description": "顯示包含在 wiki 裡頁面的清單。",
 	"apihelp-pageslist-summary": "顯示包含在 wiki 裡頁面的清單。",
 	"apihelp-pageslist-param-draw": "確定回應符合此請求的值",
 	"apihelp-pageslist-param-start": "從零開始的結果偏移",

@@ -14,7 +14,6 @@
 	"pageslist-last-modified": "שינוי אחרון",
 	"pageslist-last-user": "שונה לאחרונה על־ידי",
 	"pageslist-basepage": "דפי המשנה של הדף (כולל מרחב שם):",
-	"apihelp-pageslist-description": "הצגת רשימה של דפים שכלולים בוויקי.",
 	"apihelp-pageslist-summary": "הצגת רשימה של דפים שכלולים בוויקי.",
 	"apihelp-pageslist-param-draw": "ערך שמבטיח שהתגובה תואמת את הבקשה הזאת",
 	"apihelp-pageslist-param-start": "היסט תוצאה, מבוסס אפס",

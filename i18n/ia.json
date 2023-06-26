@@ -13,7 +13,6 @@
 	"pageslist-last-modified": "Ultime modification",
 	"pageslist-last-user": "Ultime modification per",
 	"pageslist-basepage": "Subpaginas de (includer le spatio de nomines):",
-	"apihelp-pageslist-description": "Monstra un lista de paginas continite in iste wiki.",
 	"apihelp-pageslist-summary": "Monstra un lista de paginas continite in iste wiki.",
 	"apihelp-pageslist-param-draw": "Valor que assecura que le responsa corresponde a iste requesta",
 	"apihelp-pageslist-param-start": "Position del resultato, a partir de zero",

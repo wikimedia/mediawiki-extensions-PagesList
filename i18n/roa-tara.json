@@ -13,7 +13,6 @@
 	"pageslist-last-modified": "Urteme cangiamende",
 	"pageslist-last-user": "Urteme cangiamende da",
 	"pageslist-basepage": "Sottopàggene de ('nglude namespace):",
-	"apihelp-pageslist-description": "Fà 'ndrucà 'n'elenghe de pàggene ca ste jndr'à 'na uicchi.",
 	"apihelp-pageslist-summary": "Fà 'ndrucà 'n'elenghe de pàggene ca ste jndr'à 'na uicchi.",
 	"apihelp-pageslist-param-draw": "'U valore pe avè 'na resposte ca s'accocchie cu sta richieste",
 	"apihelp-pageslist-param-start": "Distanze d'u resultate, cu base zero",

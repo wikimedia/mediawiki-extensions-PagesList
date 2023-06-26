@@ -14,7 +14,6 @@
 	"pageslist-last-modified": "Τροποποιήθηκε τελευταία φορά",
 	"pageslist-last-user": "Τροποποιήθηκε τελευταία φορά από τον",
 	"pageslist-basepage": "Υποσελίδες του (συμπερίληψη ονοματοχώρου):",
-	"apihelp-pageslist-description": "Εμφανίζει μια λίστα σελίδων που περιέχονται στο βίκι.",
 	"apihelp-pageslist-summary": "Εμφανίζει μια λίστα σελίδων που περιέχονται στο βίκι.",
 	"apihelp-pageslist-param-length": "Αριθμός αποτελεσμάτων για επιστροφή",
 	"apihelp-pageslist-example": "Πάρτε τα αποτελέσματα 10-19 από τη λίστα σελίδων"

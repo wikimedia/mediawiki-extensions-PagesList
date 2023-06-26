@@ -13,7 +13,6 @@
 	"pageslist-last-modified": "Zadnja sprememba",
 	"pageslist-last-user": "Zadnji spremenil",
 	"pageslist-basepage": "Podstrani strani (vključite imenski prostor):",
-	"apihelp-pageslist-description": "Prikaže seznam strani, ki jih vsebuje viki.",
 	"apihelp-pageslist-summary": "Prikaže seznam strani, ki jih vsebuje viki.",
 	"apihelp-pageslist-param-draw": "Vrednost za zagotovitev, da se odgovor ujema s tem zahtevkom",
 	"apihelp-pageslist-param-start": "Odmik zadetkov, od nič",
