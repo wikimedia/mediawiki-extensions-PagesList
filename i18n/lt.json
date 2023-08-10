@@ -6,6 +6,16 @@
 			"Nokeoo"
 		]
 	},
+	"pageslist-desc": "Rodo puslapių sąrašą",
+	"pageslist": "Puslapių sąrašas",
+	"pageslistquerypage": "Puslapių sąrašo užklausų puslapis",
+	"pageslist-legend": "Puslapių sąrašo parinktys",
 	"pageslist-categories": "Kategorija:",
+	"pageslist-title": "Pavadinimas",
+	"pageslist-last-modified": "Paskutinis pakeitimas",
+	"pageslist-last-user": "Paskutinio keitimo autorius",
+	"pageslist-basepage": "Ko polapiai (įtraukite vardų sritį):",
+	"apihelp-pageslist-summary": "Parodo puslapių, esančių viki, sąrašą.",
+	"apihelp-pageslist-param-draw": "Reikšmė, užtikrinanti, kad atsakymas atitinka užklausą",
 	"apihelp-pageslist-param-length": "Gražinamų rezultatų skaičius"
 }
