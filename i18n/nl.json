@@ -17,5 +17,9 @@
 	"pageslist-last-modified": "Laatst gewijzigd",
 	"pageslist-last-user": "Laatst gewijzigd door",
 	"pageslist-basepage": "Subpagina's van (inclusief naamruimte):",
-	"apihelp-pageslist-param-length": "Aantal resultaten om te tonen"
+	"apihelp-pageslist-summary": "Toont een lijst met pagina’s in de wiki.",
+	"apihelp-pageslist-param-draw": "Waarde om ervoor te zorgen dat het antwoord overeenkomt met dit verzoek",
+	"apihelp-pageslist-param-start": "Het resultaat om bij te beginnen, geteld vanaf nul",
+	"apihelp-pageslist-param-length": "Aantal resultaten om te tonen",
+	"apihelp-pageslist-example": "Haalt resultaten 10-19 op uit de paginalijst"
 }
