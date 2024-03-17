@@ -110,7 +110,7 @@ class PagesList extends ContextSource {
 	 */
 	public function doQuery( $offset = false, $limit = false, $indexField = 'rev_timestamp',
 		$descending = true ) {
-		list( $tables, $fields, $conds, $fname, $options, $join_conds ) = $this->buildQueryInfo( $offset,
+		[ $tables, $fields, $conds, $fname, $options, $join_conds ] = $this->buildQueryInfo( $offset,
 			$limit, $indexField, $descending );
 		$this->result = $this->db->select(
 			$tables, $fields, $conds, $fname, $options, $join_conds

@@ -135,7 +135,7 @@ class PagesListOptions extends ContextSource {
 	 * @return array
 	 */
 	protected function categoryFilterForm( FormOptions $opts ) {
-		list( $label, $input ) = Xml::inputLabelSep( $this->msg( 'pageslist-categories' )->text(),
+		[ $label, $input ] = Xml::inputLabelSep( $this->msg( 'pageslist-categories' )->text(),
 				'categories', 'mw-categories', false, $opts['categories'] );
 
 		return [ $label, $input ];
@@ -146,7 +146,7 @@ class PagesListOptions extends ContextSource {
 	 * @return array
 	 */
 	protected function basepageFilterForm( FormOptions $opts ) {
-		list( $label, $input ) = Xml::inputLabelSep( $this->msg( 'pageslist-basepage' )->text(),
+		[ $label, $input ] = Xml::inputLabelSep( $this->msg( 'pageslist-basepage' )->text(),
 				'basepage', 'mw-basepage', false, $opts['basepage'] );
 
 		return [ $label, $input ];
