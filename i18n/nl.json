@@ -5,7 +5,8 @@
 			"Mainframe98",
 			"McDutchie",
 			"Sjoerddebruin",
-			"Xbaked potatox"
+			"Xbaked potatox",
+			"Siebrand"
 		]
 	},
 	"pageslist-desc": "Toont een lijst van pagina's",
@@ -20,6 +21,6 @@
 	"apihelp-pageslist-summary": "Toont een lijst met pagina’s in de wiki.",
 	"apihelp-pageslist-param-draw": "Waarde om ervoor te zorgen dat het antwoord overeenkomt met dit verzoek",
 	"apihelp-pageslist-param-start": "Het resultaat om bij te beginnen, geteld vanaf nul",
-	"apihelp-pageslist-param-length": "Aantal resultaten om te tonen",
+	"apihelp-pageslist-param-length": "Aantal resultaten om weer te geven",
 	"apihelp-pageslist-example": "Haalt resultaten 10-19 op uit de paginalijst"
 }
