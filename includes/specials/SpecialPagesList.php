@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * SpecialPage for PagesList extension
  *
@@ -25,7 +27,8 @@ class SpecialPagesList extends IncludableSpecialPage {
 		$opts = $this->fetchOptionsFromRequest( PagesListOptions::getDefaultOptions() );
 		$categoryTitle = Title::makeTitleSafe( NS_CATEGORY, $opts['categories'] );
 		$basePageTitle = Title::newFromText( $opts['basepage'] );
-		$this->pagesList = new PagesList( wfGetDB( DB_REPLICA ), $opts['namespace'], $opts['invert'],
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$this->pagesList = new PagesList( $dbr, $opts['namespace'], $opts['invert'],
 			$opts['associated'], $categoryTitle, $basePageTitle );
 		if ( !$wgPagesListUseAjax ) {
 			$this->pagesList->doQuery();

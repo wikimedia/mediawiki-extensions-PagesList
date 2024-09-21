@@ -97,7 +97,8 @@ class PagesListHooks {
 			}
 		}
 
-		$pagesList = new PagesList( wfGetDB( DB_REPLICA ), $namespaceId, $params['invert'],
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$pagesList = new PagesList( $dbr, $namespaceId, $params['invert'],
 			$params['associated'], $categoryTitle, $basePageTitle );
 
 		if ( $params['format'] === null ) {
