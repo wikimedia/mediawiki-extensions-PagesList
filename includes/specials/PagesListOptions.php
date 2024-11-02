@@ -21,7 +21,7 @@ class PagesListOptions extends ContextSource {
 	 * @param FormOptions $opts
 	 * @param IContextSource|null $context
 	 */
-	function __construct( Title $pageTitle, FormOptions $opts, IContextSource $context = null ) {
+	function __construct( Title $pageTitle, FormOptions $opts, ?IContextSource $context = null ) {
 		$this->pageTitle = $pageTitle;
 		$this->opts = $opts;
 
