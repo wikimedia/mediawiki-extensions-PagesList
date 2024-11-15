@@ -86,7 +86,7 @@ class PagesList extends ContextSource {
 	 * @param IContextSource|null $context
 	 */
 	function __construct( IDatabase $db, $namespace = null, $nsInvert = false, $associated = false,
-		Title $category = null, Title $basePage = null, IContextSource $context = null ) {
+		?Title $category = null, ?Title $basePage = null, ?IContextSource $context = null ) {
 		if ( $context ) {
 			$this->setContext( $context );
 		}
@@ -236,7 +236,7 @@ class PagesList extends ContextSource {
 		return get_class( $this );
 	}
 
-	function getList( $format, $showLastUser, $showLastModification, OutputPage $out = null ) {
+	function getList( $format, $showLastUser, $showLastModification, ?OutputPage $out = null ) {
 		$useAjax = false;
 		switch ( $format ) {
 			case 'datatable':
