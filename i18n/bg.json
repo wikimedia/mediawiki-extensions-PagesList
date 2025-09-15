@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"StanProg"
 		]
 	},
-	"pageslist-categories": "Категория:"
+	"pageslist-categories": "Категория:",
+	"pageslist-last-user": "Последна промяна"
 }
