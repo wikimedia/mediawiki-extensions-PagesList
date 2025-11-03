@@ -1,5 +1,9 @@
 <?php
 
+use MediaWiki\Html\FormOptions;
+use MediaWiki\Html\Html;
+use MediaWiki\Title\Title;
+
 /**
  * PagesListOptions
  *
