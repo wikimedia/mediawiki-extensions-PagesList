@@ -45,7 +45,7 @@ class SpecialPagesList extends IncludableSpecialPage {
 		global $wgPagesListShowLastUser, $wgPagesListShowLastModification;
 
 		$out = $this->getOutput();
-		$out->setPageTitle( $this->msg( 'pageslist' ) );
+		$out->setPageTitle( $this->msg( 'pageslist' )->escaped() );
 		$out->addHTML( $this->pagesListOptions->getPageHeader() );
 		/** @todo modify to check if DataTables submodule exists */
 		$out->addHTML( $this->pagesList->getList( 'datatable', $wgPagesListShowLastUser,
