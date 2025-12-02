@@ -59,8 +59,20 @@ $specialPageAliases['ur'] = [
 	'PagesList' => [ 'فہرست_صفحات' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'PagesList' => [ 'PagesList' ],
+	'PagesListQueryPage' => [ 'PagesListQueryPage' ],
+];
+
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'PagesList' => [ '页面列表' ],
 	'PagesListQueryPage' => [ '页面列表查询页面' ],
+];
+
+/** Traditional Chinese (中文（繁體）) */
+$specialPageAliases['zh-hant'] = [
+	'PagesList' => [ '頁面清單' ],
+	'PagesListQueryPage' => [ '頁面清單查詢頁面' ],
 ];
