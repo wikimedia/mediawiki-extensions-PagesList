@@ -48,7 +48,7 @@ class PagesListOptions extends ContextSource {
 		$extraOpts = $this->getExtraOptions( $opts );
 		$extraOptsCount = count( $extraOpts );
 		$count = 0;
-		$submit = ' ' . Xml::submitbutton( $this->msg( 'allpagessubmit' )->text() );
+		$submit = ' ' . Html::submitButton( $this->msg( 'allpagessubmit' )->text(), [] );
 
 		$out = Xml::openElement( 'table', [ 'id' => 'pageslist-header' ] );
 		foreach ( $extraOpts as $name => $optionRow ) {
@@ -118,14 +118,26 @@ class PagesListOptions extends ContextSource {
 				[ 'selected' => $opts['namespace'], 'all' => '' ],
 				[ 'name' => 'namespace', 'id' => 'namespace' ]
 		);
-		$nsLabel = Xml::label( $this->msg( 'namespace' )->text(), 'namespace' );
-		$invert = Xml::checkLabel(
-				$this->msg( 'invert' )->text(), 'invert', 'nsinvert', $opts['invert'],
+		$nsLabel = Html::label( $this->msg( 'namespace' )->text(), 'namespace' );
+		$invert = Html::check(
+				'invert', $opts['invert'],
+				[
+					'id' => 'nsinvert',
+					'title' => $this->msg( 'tooltip-invert' )->text()
+				]
+		) . "\u{00A0}" . Html::label(
+				$this->msg( 'invert' )->text(), 'nsinvert',
 				[ 'title' => $this->msg( 'tooltip-invert' )->text() ]
 		);
-		$associated = Xml::checkLabel(
-				$this->msg( 'namespace_association' )->text(), 'associated', 'nsassociated',
-				$opts['associated'], [ 'title' => $this->msg( 'tooltip-namespace_association' )->text() ]
+		$associated = Html::check(
+				'associated', $opts['associated'],
+				[
+					'id' => 'nsassociated',
+					'title' => $this->msg( 'tooltip-namespace_association' )->text()
+				]
+		) . "\u{00A0}" . Html::label(
+				$this->msg( 'namespace_association' )->text(), 'nsassociated',
+				[ 'title' => $this->msg( 'tooltip-namespace_association' )->text() ]
 		);
 
 		return [ $nsLabel, "$nsSelect $invert $associated" ];
@@ -139,10 +151,10 @@ class PagesListOptions extends ContextSource {
 	 * @return array
 	 */
 	protected function categoryFilterForm( FormOptions $opts ) {
-		[ $label, $input ] = Xml::inputLabelSep( $this->msg( 'pageslist-categories' )->text(),
-				'categories', 'mw-categories', false, $opts['categories'] );
-
-		return [ $label, $input ];
+		return [
+			Html::label( $this->msg( 'pageslist-categories' )->text(), 'mw-categories' ),
+			Html::input( 'categories', $opts['categories'], 'text', [ 'id' => 'mw-categories' ] )
+		];
 	}
 
 	/**
@@ -150,10 +162,10 @@ class PagesListOptions extends ContextSource {
 	 * @return array
 	 */
 	protected function basepageFilterForm( FormOptions $opts ) {
-		[ $label, $input ] = Xml::inputLabelSep( $this->msg( 'pageslist-basepage' )->text(),
-				'basepage', 'mw-basepage', false, $opts['basepage'] );
-
-		return [ $label, $input ];
+		return [
+			Html::label( $this->msg( 'pageslist-basepage' )->text(), 'mw-basepage' ),
+			Html::input( 'basepage', $opts['basepage'], 'text', [ 'id' => 'mw-basepage' ] )
+		];
 	}
 
 	/**
