@@ -50,28 +50,28 @@ class PagesListOptions extends ContextSource {
 		$count = 0;
 		$submit = ' ' . Html::submitButton( $this->msg( 'allpagessubmit' )->text(), [] );
 
-		$out = Xml::openElement( 'table', [ 'id' => 'pageslist-header' ] );
+		$out = Html::openElement( 'table', [ 'id' => 'pageslist-header' ] );
 		foreach ( $extraOpts as $name => $optionRow ) {
 			# Add submit button to the last row only
 			++$count;
 			$addSubmit = ( $count === $extraOptsCount ) ? $submit : '';
 
-			$out .= Xml::openElement( 'tr' );
+			$out .= Html::openElement( 'tr' );
 			if ( is_array( $optionRow ) ) {
-				$out .= Xml::tags(
+				$out .= Html::rawElement(
 						'td', [ 'class' => 'mw-label mw-' . $name . '-label' ], $optionRow[0]
 				);
-				$out .= Xml::tags(
+				$out .= Html::rawElement(
 						'td', [ 'class' => 'mw-input' ], $optionRow[1] . $addSubmit
 				);
 			} else {
-				$out .= Xml::tags(
+				$out .= Html::rawElement(
 						'td', [ 'class' => 'mw-input', 'colspan' => 2 ], $optionRow . $addSubmit
 				);
 			}
-			$out .= Xml::closeElement( 'tr' );
+			$out .= Html::closeElement( 'tr' );
 		}
-		$out .= Xml::closeElement( 'table' );
+		$out .= Html::closeElement( 'table' );
 
 		$unconsumed = $opts->getUnconsumedValues();
 		foreach ( $unconsumed as $key => $value ) {
@@ -81,11 +81,12 @@ class PagesListOptions extends ContextSource {
 		$t = $this->pageTitle;
 		$out .= Html::hidden( 'title', $t->getPrefixedText() );
 
-		$form = Xml::tags( 'form', [ 'action' => $wgScript ], $out );
+		$form = Html::rawElement( 'form', [ 'action' => $wgScript ], $out );
 
-		return Xml::fieldset(
-				$this->msg( 'pageslist-legend' )->text(), $form, [ 'class' => 'ploptions' ]
-		);
+		return Html::openElement( 'fieldset', [ 'class' => 'ploptions' ] ) . "\n" .
+			Html::element( 'legend', [], $this->msg( 'pageslist-legend' )->text() ) . "\n" .
+			$form . "\n" .
+			Html::closeElement( 'fieldset' ) . "\n";
 	}
 
 	/**
