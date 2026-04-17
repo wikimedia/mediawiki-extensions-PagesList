@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Revi",
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
@@ -15,6 +16,8 @@
 	"pageslist-last-user": "최근 편집자",
 	"pageslist-basepage": "하위문서 (이름공간 포함):",
 	"apihelp-pageslist-summary": "위키에 포함된 문서의 목록을 표시합니다.",
+	"apihelp-pageslist-param-draw": "응답이 이 요청에 일치하는지 확인하는 값",
+	"apihelp-pageslist-param-start": "0을 기준으로 한 결과 오프셋",
 	"apihelp-pageslist-param-length": "반환할 결과 수",
 	"apihelp-pageslist-example": "문서 목록에서 10~19개의 결과를 가져옵니다"
 }
