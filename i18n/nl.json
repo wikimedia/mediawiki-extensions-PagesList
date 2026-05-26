@@ -9,7 +9,7 @@
 			"Xbaked potatox"
 		]
 	},
-	"pageslist-desc": "Toont een lijst van pagina's",
+	"pageslist-desc": "Een lijst van pagina's weergeven",
 	"pageslist": "Lijst met pagina's",
 	"pageslistquerypage": "Zoekpagina voor paginalijsten",
 	"pageslist-legend": "Opties voor paginalijsten",
@@ -18,7 +18,7 @@
 	"pageslist-last-modified": "Laatst gewijzigd",
 	"pageslist-last-user": "Laatst gewijzigd door",
 	"pageslist-basepage": "Subpagina's van (inclusief naamruimte):",
-	"apihelp-pageslist-summary": "Toont een lijst met pagina’s in de wiki.",
+	"apihelp-pageslist-summary": "Geeft een lijst weer met pagina’s in de wiki.",
 	"apihelp-pageslist-param-draw": "Waarde om ervoor te zorgen dat het antwoord overeenkomt met dit verzoek",
 	"apihelp-pageslist-param-start": "Het resultaat om bij te beginnen, geteld vanaf nul",
 	"apihelp-pageslist-param-length": "Aantal resultaten om weer te geven",
