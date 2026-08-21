@@ -1,8 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
-	"pageslist-title": "سرليک"
+	"pageslist-desc": "د مخونو لړليک ښيي",
+	"pageslist": "مخونو لړيک",
+	"pageslistquerypage": "د مخونو لړليک تپوس مخ",
+	"pageslist-legend": "د مخونو لړليک خوښنې",
+	"pageslist-categories": "وېشنيزه:",
+	"pageslist-title": "سرليک",
+	"pageslist-last-modified": "تېرځل بدل شوی",
+	"pageslist-last-user": "تېرځل بدلوونکی",
+	"pageslist-basepage": "څېرمه مخونه د (نوم‌تشيال په گډون):",
+	"apihelp-pageslist-summary": "په ويکي کې د رانغاړلو مخونو لړليک ښيي.",
+	"apihelp-pageslist-param-draw": "دې غوښتنې سره د ځواب د سمون ډاډ ترلاسه کولو لپاره ارزښت",
+	"apihelp-pageslist-param-start": "پايله انډولول، د صفر پر بنسټ",
+	"apihelp-pageslist-param-length": "دبېرته راگرځېدونکو پايلو شمېر",
+	"apihelp-pageslist-example": "د مخونو له لړليک څخه د ۱۰-۱۹ پورې پايلې ترلاسه کړئ"
 }
